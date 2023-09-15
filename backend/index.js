@@ -1,1 +1,2 @@
-const name = "Leon"
+let name = "Leon"
+console.log("Hello my friend")

@@ -2,12 +2,12 @@ import Image from 'next/image';
 
 const Main = () => {
   return (
-    <div className="grid grid-cols-2 bg-cover bg-center" style={{backgroundImage: 'url("/images/back.jpg")'}}>
+    <div className="grid grid-cols-2 bg-cover bg-center" style={{backgroundImage: 'url("/images/back.jp")'}}>
         <div className="hero-section flex justify-center">
             <Image
             src="/images/hero-pic.png"
             alt="Description of your image"
-            width={550} 
+            width={500} 
             height={200}
         />
         </div>

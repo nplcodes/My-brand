@@ -2,6 +2,10 @@
 
 import Image from "next/image"
 import { HiOutlineFolderDownload } from "react-icons/hi";
+import { FaLinkedinIn, FaFacebookF } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa6";
+
+
 
 
 const Personal = () => {
@@ -50,7 +54,6 @@ const Personal = () => {
             <div className=" py-2 rounded-sm px-3 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)]">+250 780 922 562</div>
           </div>
         </div>
-        <hr className="h-0.1 w-full bg-slate-400 mt-6 "/>
 
         {/* Pysical address */}
         <p className="pt-5 font-bold">Physical address</p>
@@ -72,6 +75,38 @@ const Personal = () => {
           <div>
             <p className="pb-2 text-slate-500">Postal Code</p>
             <div className=" py-2 rounded-sm px-3 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)]">233 440</div>
+          </div>
+        </div>
+        {/* Interest */}
+        <p className="pt-8 font-bold">Interest</p>
+        <div className="row-1 grid grid-cols-2 gap-3 pt-5">
+          <div>
+          <p className="pb-2 text-slate-500">#social media</p>
+            <div className=" py-2 rounded-sm px-3 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)]">
+              <ul className="flex gap-5 items-center">
+                  <span className="cursor-pointer text-blue-500"><FaLinkedinIn /></span>
+                  <div className="bg-blue-500 h-3 w-[1px]"></div>
+                  <span className="cursor-pointer text-blue-500"><FaInstagram /></span>
+                  <div className="bg-blue-500 h-3 w-[1px]"></div>
+                  <span className="cursor-pointer text-blue-500"><FaFacebookF /></span>
+                  <div className="bg-blue-500 h-3 w-[1px]"></div>
+                  <span className="cursor-pointer text-blue-500">Be.</span>
+              </ul>
+            </div>
+          </div>
+          <div>
+            <p className="pb-2 text-slate-500">hobbies</p>
+            <div className=" py-2 rounded-sm px-3 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)]">
+              <ul className="flex gap-5 items-center">
+                  <span className="cursor-pointer">Coding</span>
+                  <div className="bg-[#C9CCCE] h-5 w-[1px]"></div>
+                  <span className="cursor-pointer">Photography</span>
+                  <div className="bg-[#C9CCCE] h-5 w-[1px]"></div>
+                  <span className="cursor-pointer">FootBal & BasketBal</span>
+                  <div className="bg-[#C9CCCE] h-5 w-[1px]"></div>
+                  <span className="cursor-pointer">Learning</span>
+              </ul>
+            </div>
           </div>
         </div>
       </div>

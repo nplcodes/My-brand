@@ -1,3 +1,4 @@
+import Image from "next/image"
 
 const Blogs = () => {
   return (
@@ -9,6 +10,24 @@ const Blogs = () => {
                 <div className='w-4 h-4 bg-blue-400'></div>
             </div>
             <h1 className='font-bold'>Blogs</h1>
+        </div>
+        <div className="blogs grid grid-cols-4 min-h-[550px]">
+          {/* Main part */}
+          <div className="main-blog col-span-3">
+            <div className="grid grid-rows-4">
+              <p>Hello</p>
+              <div>Description</div>
+            </div>
+          </div>
+          <div>
+            <p>RECENT ARTICLES</p>
+            <div className="recent-blogs grid grid-rows-4">
+              <p>Recent</p>
+              <p>Recent</p>
+              <p>Recent</p>
+              <p>Recent</p>
+            </div>
+          </div>
         </div>
     </div>
   )

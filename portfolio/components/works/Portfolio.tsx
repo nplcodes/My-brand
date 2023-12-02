@@ -1,8 +1,41 @@
+"use client"
+import { useState } from "react"
+import All from "./subcomponents/All"
+import Designs from "./subcomponents/Designs"
+import Web from "./subcomponents/Web"
+import Mob from "./subcomponents/Mob"
 
 const Portfolio = () => {
+  let [category, setCategory] = useState<string>('web')
+
+  const handleCategoryChange = (categ: string)=>{
+    setCategory(categ)
+  }
+
+  const renderingSelectedMenu = ()=>{
+    switch (category) {
+     case category='all':
+         return <All />
+       break;
+     case category='web':
+         return <Web />
+       break;
+     case category='mob':
+         return <Mob />
+       break;
+     case category='designs':
+         return <Designs />
+       break;
+ 
+     default:
+       break;
+   }
+ }
+
+  
     return (
       <div>
-          <div className="about-header bg-slate-300 flex gap-3 flex-col items-center justify-center py-10 mb-5">
+          <div className="category-header bg-slate-300 flex gap-3 flex-col items-center justify-center py-10 mb-5">
               <div className='flex items-center justify-center gap-2'>
                   <div className='w-4 h-4 bg-blue-400'></div>
                     <p className='text-blue-400'>My works</p>
@@ -12,18 +45,14 @@ const Portfolio = () => {
           </div>
           {/* Navigations */}
           <div className="py-10">
-              <div className='flex items-center justify-center gap-3'>
-                   <span className='text-blue-400 cursor-pointer'>All</span>
-                    <span className='text-blue-400 cursor-pointer'>Web</span>
-                    <span className='text-blue-400 cursor-pointer'>Mob</span>
-                    <span className='text-blue-400 cursor-pointer'>Ui/Ux</span>
+              <div className='flex items-center justify-center gap-2'>
+                   <span className={`text-blue-400' ${category ==='all'? 'text-blue-800 border-b-4 cursor-pointer border-blue-500':''}`} onClick={ () => handleCategoryChange('all')}>All</span>
+                    <span className={`text-blue-400' ${category ==='web'? 'cursor-pointer text-blue-800 border-b-4 border-blue-500':''}`} onClick={ () => handleCategoryChange('web')}>Web</span>
+                    <span className={`text-blue-400' ${category ==='mob'? 'cursor-pointer text-blue-800 border-b-4 border-blue-500':''}`} onClick={ () => handleCategoryChange('mob')}>Mob</span>
+                    <span className={`text-blue-400' ${category ==='designs'? 'cursor-pointer text-blue-800 border-b-4 border-blue-500':''}`} onClick={ () => handleCategoryChange('designs')}>Ui/Ux</span>
               </div>
           </div>
-          <div className="works grid grid-cols-4 min-h-[500px] p-5 px-10">
-            <div className="right-small">Right</div>
-            <div className="middle-large col-span-2">Large</div>
-            <div className="left-small">Left small</div>
-          </div>
+          {renderingSelectedMenu()}
       </div>
     )
   }

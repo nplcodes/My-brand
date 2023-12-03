@@ -7,7 +7,7 @@ import { GoCommentDiscussion } from "react-icons/go";
 const Blogs = () => {
   return (
     <div>
-        <div className="about-header bg-slate-300 flex gap-3 flex-col items-center justify-center py-10">
+        <div className="about-header bg-slate-300 flex gap-3 flex-col items-center justify-center py-10 bg-transparent">
             <div className='flex items-center justify-center gap-2'>
                 <div className='w-4 h-4 bg-blue-400'></div>
                   <p className='text-blue-400'>News</p>
@@ -15,17 +15,18 @@ const Blogs = () => {
             </div>
             <h1 className='font-bold'>Blogs</h1>
         </div>
-        <div className="blogs grid grid-cols-4 gap-10 min-h-[550px] px-32 py-5">
+          <p className="px-16 font-bold">23 jun, 2023</p>
+        <div className="blogs grid grid-cols-4 gap-10 min-h-[550px] px-16">
         {/* Main part */}
-        <div className="main-blog col-span-3 py-10">
+        <div className="main-blog col-span-3 py-5">
           <img
             src="https://source.unsplash.com/800x600/?nature,water"
             alt="Main Blog Post"
-            className="w-full h-fit object-cover rounded-md"
+            className="w-full h-96 object-cover rounded-md"
           />
           <div className="p-2">
-            <div className=" text-xl font-bold mb-1 py-5">
-              <p className="mb-2">Coding stack for 2026</p>
+            <div className=" text-xl mb-1 py-5">
+              <p className="mb-2 font-bold">Coding stack for 2026</p>
               <p className="text-sm">
                 hat is Lorem Ipsum?
                 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's 
@@ -47,7 +48,7 @@ const Blogs = () => {
         <div className="col-span-1 p-2">
           <p className="text-lg font-bold mb-2">Recent articles</p>
           <div className="recent-blogs grid grid-rows-4 gap-2">
-            <div className="recent-card flex items-center gap-3 cursor-pointer">
+            <div className="recent-card flex items-center gap-3 cursor-pointer px-5 shadow-[0_3px_10px_rgb(0,0,0,0.2)] rounded-md">
               <Image src="/images/linux-blog.jpg" alt="recent" width={80} height={80} className="rounded-md"/>
               <div className="recent-card-text flex flex-col gap-1">
                 <p className="font-bold">Best linux for devs</p>
@@ -55,7 +56,7 @@ const Blogs = () => {
               </div>
             </div>
 
-            <div className="recent-card flex items-center gap-3 cursor-pointer">
+            <div className="recent-card flex items-center gap-3 cursor-pointer px-5 shadow-[0_3px_10px_rgb(0,0,0,0.2)] rounded-md">
               <Image src="/images/ngnix-blog.webp" alt="recent" width={80} height={80} className="rounded-md"/>
               <div className="recent-card-text flex flex-col gap-1">
                 <p className="font-bold">Why nginx?</p>
@@ -63,7 +64,7 @@ const Blogs = () => {
               </div>
             </div>
 
-            <div className="recent-card flex items-center gap-3  cursor-pointer">
+            <div className="recent-card flex items-center gap-3 px-5  cursor-pointer shadow-[0_3px_10px_rgb(0,0,0,0.2)] rounded-md">
               <Image src="/images/vercel-blog.webp" alt="recent" width={80} height={80} className="rounded-md"/>
               <div className="recent-card-text flex flex-col gap-1">
                 <p className="font-bold">Versel for next 14.0</p>
@@ -71,7 +72,7 @@ const Blogs = () => {
               </div>
             </div>
 
-            <div className="recent-card flex items-center gap-3 cursor-pointer">
+            <div className="recent-card flex items-center gap-3 cursor-pointer px-5 shadow-[0_3px_10px_rgb(0,0,0,0.2)] rounded-md">
               <Image src="/images/hero-pic.png" alt="recent" width={80} height={80} className="rounded-md"/>
               <div className="recent-card-text flex flex-col gap-1">
                 <p className="font-bold">Popular stack</p>

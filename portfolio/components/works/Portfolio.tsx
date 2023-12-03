@@ -35,7 +35,7 @@ const Portfolio = () => {
   
     return (
       <div>
-          <div className="category-header bg-slate-300 flex gap-3 flex-col items-center justify-center py-10 mb-5">
+          <div className="category-header bg-slate-300 flex gap-3 flex-col items-center justify-center py-10 mb-5 bg-transparent">
               <div className='flex items-center justify-center gap-2'>
                   <div className='w-4 h-4 bg-blue-400'></div>
                     <p className='text-blue-400'>My works</p>

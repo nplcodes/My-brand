@@ -7,9 +7,16 @@ import { BsTelephoneForward } from "react-icons/bs";
 const Footer = () => {
   return (
     <div>
-       <div className="about-header bg-slate-300 flex gap-3 flex-col py-10">
-            <div className='grid grid-cols-3'>
+       <div className="about-header bg-blue-500 text-white flex gap-3 flex-col py-10">
+            <div className='grid grid-cols-4 px-2'>
               {/* Location */}
+              <div className="subscribe">
+                <p className='pb-3'>SubScribe</p>
+                <div className='flex items-center gap-1'>
+                  <input type="text" className='text-black py-1 rounded-sm hover:focus:outline-none px-1' placeholder='Subscribe email ...'/>
+                  <button className='bg-black px-3 py-1 rounded-sm'>Send</button>
+                </div>
+              </div>
               <div className="location flex gap-3">
                 <p className='text-4xl'><CiLocationOn /></p>
                 <div className="location-text">

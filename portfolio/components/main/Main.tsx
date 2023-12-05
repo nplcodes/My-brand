@@ -3,7 +3,7 @@ import styles from './Main.module.css'; // Import the styles file (assuming you'
 
 const Main = () => {
   return (
-    <div className={`relative grid grid-cols-2 bg-cover bg-center`} style={{backgroundImage: 'url("/images/back.jp")'}}>
+    <div className={`relative grid grid-cols-2 bg-cover bg-center pt-16`} style={{backgroundImage: 'url("/images/back.jp")'}}>
       {/* Object with red background */}
       <div className="absolute inset-0 z-[-1]"></div>
 

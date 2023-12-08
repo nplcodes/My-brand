@@ -6,7 +6,7 @@ import { GoCommentDiscussion } from "react-icons/go";
 
 const Blogs = () => {
   return (
-    <div>
+    <div id="blog">
         <div className="about-header bg-slate-300 flex gap-3 flex-col items-center justify-center py-10 bg-transparent">
             <div className='flex items-center justify-center gap-2'>
                 <div className='w-4 h-4 bg-blue-400'></div>

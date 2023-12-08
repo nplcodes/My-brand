@@ -5,6 +5,7 @@ import { RiMenu3Fill } from 'react-icons/ri';
 import Image from 'next/image';
 import { FaTimes } from "react-icons/fa";
 import Link from 'next/link';
+import { Link as ScrollLink, animateScroll as scroll } from 'react-scroll';
 
 
 const NavBar = () => {
@@ -47,26 +48,28 @@ const NavBar = () => {
         <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex justify-center items-center">
           <div className="w-full bg-blue-400 mx-auto flex justify-center items-center py-5 px-5 relative" >
             {/* Add your menu content here */}
-            <ul className="flex flex-col gap-5 py-5 w-1/2 h-screen justify-center items-center">
-              <li className='w-full py-5 flex justify-center hover:bg-white hover:text-black cursor-pointer' onClick={toggleMenu}>
-                <span className="text-black cursor-pointer transition delay-75">Home</span>
-              </li>
-              <li className='w-full py-5 flex justify-center hover:bg-white hover:text-black cursor-pointer'>
-                <span className="text-black cursor-pointer hover:text-red-800" onClick={toggleMenu}>About</span>
-              </li>
-              <li className='w-full py-5 flex justify-center hover:bg-white hover:text-black' onClick={toggleMenu}>
-                <span className="text-black cursor-pointer">Blogs</span>
-              </li>
-              <li className='w-full py-5 flex justify-center hover:bg-white hover:text-black cursor-pointer' onClick={toggleMenu}>
-                <span className="text-black cursor-pointer">Portfolio</span>
-              </li>
-              <li className='w-full py-5 flex justify-center hover:bg-white hover:text-black cursor-pointer' onClick={toggleMenu}>
-                <span className="text-black cursor-pointer">Contact Me</span>
-              </li>
-              <li className='w-full py-5 flex justify-center hover:bg-white hover:text-black cursor-pointer' onClick={toggleMenu}>
-                <span className="text-black cursor-pointer">Login</span>
-              </li>
-            </ul>
+            <div className="flex flex-col gap-5 py-5 w-1/2 h-screen justify-center items-center">
+              <ScrollLink to="home" smooth={true} duration={800} >
+                <span className="text-black px-96 py-5 flex justify-center rounded-md hover:bg-white hover:text-black cursor-pointer" onClick={toggleMenu}>Home</span>
+              </ScrollLink>
+              <ScrollLink to="about" smooth={true} duration={800} >
+                <span className="text-black px-96 py-5 flex justify-center rounded-md hover:bg-white hover:text-black cursor-pointer" onClick={toggleMenu}>About</span>
+              </ScrollLink>
+              <ScrollLink to="blog" smooth={true} duration={800} >
+                <span className="text-black px-96 py-5 flex justify-center rounded-md hover:bg-white hover:text-black cursor-pointer" onClick={toggleMenu}>Blogs</span>
+              </ScrollLink>
+              <ScrollLink to="work" smooth={true} duration={800}>
+                <span className="text-black px-96 py-5 flex justify-center rounded-md hover:bg-white hover:text-black cursor-pointer" onClick={toggleMenu}>Portfolio</span>
+              </ScrollLink>
+              <ScrollLink to="contact" smooth={true} duration={800}>
+                <span className="text-black px-96 py-5 flex justify-center rounded-md hover:bg-white hover:text-black cursor-pointer" onClick={toggleMenu}>Contact</span>
+              </ScrollLink>
+              <Link href="/login">
+                <li className='w-full py-5 flex justify-center hover:bg-white hover:text-black cursor-pointer'>
+                  <span className="text-black cursor-pointer">Login</span>
+                </li>
+              </Link>
+            </div>
             <div className='absolute top-32 right-10 cursor-pointer text-red-500' onClick={closeMenu}>
                <FaTimes />
             </div>

@@ -1,4 +1,4 @@
-import Admin from '@/components/Dashboard/Admin'
+//import Admin from '@/components/Dashboard/Admin'
 import About from '@/components/about/About'
 import Blogs from '@/components/blogs/Blogs'
 import Contact from '@/components/contact/Contact'
@@ -18,7 +18,7 @@ export default function Home() {
       <Blogs />
       <Contact />
       <Login />
-      <Admin />
+      {/* <Admin /> */}
     </div>
   )
 }

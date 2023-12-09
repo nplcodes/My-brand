@@ -67,8 +67,8 @@ const NavBar = () => {
                 <span className="text-black px-96 py-5 flex justify-center rounded-md hover:bg-white hover:text-black cursor-pointer" onClick={toggleMenu}>Contact</span>
               </ScrollLink>
               <Link href="/login">
-                <li className='w-full py-5 flex justify-center hover:bg-white hover:text-black cursor-pointer'>
-                  <span className="text-black cursor-pointer">Login</span>
+                <li className=''>
+                  <span className="text-black px-96 py-5 flex justify-center rounded-md hover:bg-white hover:text-black cursor-pointer">Login</span>
                 </li>
               </Link>
             </div>

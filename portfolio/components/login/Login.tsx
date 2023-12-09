@@ -1,4 +1,7 @@
 import Image from "next/image"
+import Link from "next/link";
+import { AiTwotoneBank } from "react-icons/ai";
+
 
 const Login = () => {
   return (
@@ -15,7 +18,7 @@ const Login = () => {
           <div className="centered items-center justify-center">
              <Image src="/images/ts.png" alt="login" width={200} height={300}/>
           </div>
-          <div className="field-input px-10 flex flex-col gap-4 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)]">
+          <div className="field-input px-10 flex flex-col gap-4 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)]"> 
                 <div className="each-field py-10">
                    <p className="text-2xl font-bold flex justify-center"> Login page</p>
                 </div>
@@ -30,6 +33,7 @@ const Login = () => {
                   <p>Remember me</p>
                 </div>
                 <button className="btn btn-wide bg-blue-500 text-white">Login</button>
+               <Link href='/'> <p>Back Home</p></Link>
              </div>
         </div>
     </div>

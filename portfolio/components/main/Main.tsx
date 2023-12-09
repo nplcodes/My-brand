@@ -1,9 +1,10 @@
 import Image from 'next/image';
-import styles from './Main.module.css'; // Import the styles file (assuming you're using CSS modules)
+import styles from './Main.module.css';
+
 
 const Main = () => {
   return (
-    <div className={`relative grid grid-cols-2 bg-cover bg-center pt-16`} style={{backgroundImage: 'url("/images/back.jp")'}} id="home">
+    <div className={`relative grid grid-cols-2 bg-cover bg-center pt-24`} style={{backgroundImage: 'url("/images/back.jp")'}} id="home">
       {/* Object with red background */}
       <div className="absolute inset-0 z-[-1]"></div>
 

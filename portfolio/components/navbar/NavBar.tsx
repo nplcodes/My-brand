@@ -23,7 +23,9 @@ const NavBar = () => {
     <div className="py-5 px-5 fixed top-0 right-0 left-0 bg-blue-500 z-50">
       <div className="max-w-4xl mx-auto flex justify-between items-center">
         <div className="logo text-4xl font-bold cursor-pointer">
+        <ScrollLink to="home" smooth={true} duration={800}>
           <Image alt="logo" width={60} height={60} src="/images/LOGO.png" />
+        </ScrollLink>
         </div>
         <nav className="navbar-menu flex gap-10">
           <ul className="flex gap-5 items-center">

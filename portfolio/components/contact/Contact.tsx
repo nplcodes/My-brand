@@ -2,7 +2,7 @@ import { FaFacebook, FaInstagram, FaLinkedinIn } from "react-icons/fa"
 
 const Contact = () => {
   return (
-    <div id="contact">
+    <div id="contact" className="pt-24 ">
         <div className="about-header bg-slate-300 flex gap-3 flex-col items-center justify-center py-10 bg-transparent">
             <div className='flex items-center justify-center gap-2'>
                 <div className='w-4 h-4 bg-blue-400'></div>
@@ -11,7 +11,7 @@ const Contact = () => {
             </div>
             <h1 className='font-bold'>Contact Me</h1>
         </div>
-        <div className="blogs grid grid-cols-3 gap-10 min-h-[550px] py-5">
+        <div className="blogs grid grid-cols-3 gap-10 min-h-[550px] py-5 p-10">
             <div className="links flex flex-col items-center">
                 <div className="social-icons py-4">
                     <p className="pb-8 font-bold">Let's talk</p>
@@ -27,7 +27,7 @@ const Contact = () => {
                 </div>
                 <p>@nplcodes</p>
             </div>
-            <div className="form col-span-2">
+            <div className=" p-10 form col-span-2 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)]">
                 <p className="text-xl mb-10">Send text message</p>
                 <div className="form">
                     <div className="input-fields grid grid-cols-2 gap-6 py-3">

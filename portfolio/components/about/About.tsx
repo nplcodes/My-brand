@@ -39,7 +39,7 @@ const renderingSelectedMenu = ()=>{
 }
 
   return (
-    <div className='mt-5' id="about">
+    <div className='pt-24' id="about">
         <div className="about-header bg-slate-300 bg-transparent flex gap-3 flex-col items-center justify-center py-10">
             <div className='flex items-center justify-center gap-2'>
                 <div className='w-4 h-4 bg-blue-400'></div>

@@ -9,6 +9,7 @@ import { usePathname } from 'next/navigation';
 import Login from '@/components/login/Login';
 import AdminLayout from '@/components/layout/AdminLayout';
 import Admin from '@/components/Dashboard/Admin';
+import Head from 'next/head';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -20,6 +21,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
   return (
     <html lang="en">
+        <Head>
+          <title>Home Page - My Next.js App</title>
+      </Head>
       <body className={inter.className}>
         {isLoginPage && (
           <div className="container max-w-7xl mx-auto">

@@ -32,7 +32,9 @@ const Login = () => {
                   <input type="checkbox" className="checkbox bg-blue-500 text-white" />
                   <p>Remember me</p>
                 </div>
-                <button className="btn btn-wide bg-blue-500 text-white">Login</button>
+                <Link href="/admin">
+                  <button className="btn btn-wide bg-blue-500 text-white">Login</button>
+                </Link>
                <Link href='/'> <p>Back Home</p></Link>
              </div>
         </div>

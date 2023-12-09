@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React from 'react'
 
 const NavBar = () => {
@@ -42,7 +43,9 @@ const NavBar = () => {
           </a>
         </li>
         <li><a>Settings</a></li>
-        <li><a>Logout</a></li>
+        <Link href="/">
+           <li>Logout</li>
+        </Link>
       </ul>
     </div>
   </div>

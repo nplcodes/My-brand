@@ -1,8 +1,12 @@
-import React from 'react'
+import {motion} from 'framer-motion'
 
 const Blogs = () => {
   return (
-<div className='px-5 mt-20 z-0'>
+<motion.div
+ initial={{opacity: 0, y:-100}}
+ animate={{opacity: 1, y:0}}
+ transition={{duration:1}}
+ className='px-5 mt-20 z-0'>
 <div className="navbar bg-base-100 flex flex-col justify-start">
   <div className="flex-none">
     <ul className="menu menu-horizontal px-1 flex flex-row gap-2">
@@ -73,7 +77,7 @@ const Blogs = () => {
     </div>
     </div>
 </div>
-</div>
+</motion.div>
   )
 }
 

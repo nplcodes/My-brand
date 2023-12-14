@@ -5,13 +5,13 @@ import styles from './Main.module.css';
 const Main = () => {
 
   return (
-    <div className={` pt-8`} style={{backgroundImage: 'url("/images/back.jp")'}} id="home">
+    <div className={`pt-6 lg:pt-32 lg:flex lg:justify-between lg:gap-4 lg:px-32`} style={{backgroundImage: 'url("/images/back.jp")'}} id="home">
       {/* Object with red background */}
       <div className="absolute inset-0 z-[-1]"></div>
 
       {/* Existing content */}
       {/* rounded-full shadow-[0_20px_50px_rgba(8,_112,_184,_0.7)] */}
-      <div className={`hero-section flex justify-center `} style={{}}>
+      <div className={`hero-section flex justify-center xl:rounded-full xl:shadow-[0_20px_50px_rgba(8,_112,_184,_0.7)] `} style={{}}>
         <Image
           src="/images/hero-pic.png"
           alt="Description of your image"

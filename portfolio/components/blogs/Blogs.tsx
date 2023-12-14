@@ -6,7 +6,6 @@ import { GoCommentDiscussion } from "react-icons/go";
 
 const Blogs = () => {
   return (
-    // hidden
     <div id="blog" className="pt-24">
         <div className="blog-header bg-slate-300 flex gap-3 flex-col items-center justify-center py-10 bg-transparent">
             <div className='flex items-center justify-center gap-2'>
@@ -16,9 +15,7 @@ const Blogs = () => {
             </div>
             <h1 className='font-bold'>Blogs</h1>
         </div>
-          <p className="px-5 font-bold">23 jun, 2023</p>
-          {/* grid grid-cols-4 gap-10 */}
-        <div className="blogs min-h-[550px] px-5">
+        <div className="blogs min-h-[550px] px-5 xl:grid xl:grid-cols-5 xl:gap-10">
         {/* Main part */}
         <div className="main-blog col-span-3 py-5">
           <img
@@ -45,9 +42,9 @@ const Blogs = () => {
         </div>
 
         {/* Recent Articles */}
-        <div className="col-span-1 p-2">
+        <div className="col-span-2 p-2 lg:px-16 xl:px-1">
           <p className="text-lg font-bold mb-2">Recent articles</p>
-          <div className="recent-blogs grid grid-rows-4 gap-2">
+          <div className="recent-blogs grid grid-rows-4 gap-2 lg:grid-cols-2 xl:grid-cols-1 xl:justify-start">
             <div className="recent-card flex items-center gap-3 cursor-pointer px-5 shadow-[0_3px_10px_rgb(0,0,0,0.2)] rounded-md">
               <Image src="/images/linux-blog.jpg" alt="recent" width={80} height={80} className="rounded-md"/>
               <div className="recent-card-text flex flex-col gap-1">
@@ -79,7 +76,6 @@ const Blogs = () => {
                 <p className="text-xs">25 june 2023</p>
               </div>
             </div>
-            
           </div>
         </div>
       </div>

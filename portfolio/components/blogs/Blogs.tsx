@@ -6,8 +6,9 @@ import { GoCommentDiscussion } from "react-icons/go";
 
 const Blogs = () => {
   return (
+    // hidden
     <div id="blog" className="pt-24">
-        <div className="about-header bg-slate-300 flex gap-3 flex-col items-center justify-center py-10 bg-transparent">
+        <div className="blog-header bg-slate-300 flex gap-3 flex-col items-center justify-center py-10 bg-transparent">
             <div className='flex items-center justify-center gap-2'>
                 <div className='w-4 h-4 bg-blue-400'></div>
                   <p className='text-blue-400'>News</p>
@@ -15,8 +16,9 @@ const Blogs = () => {
             </div>
             <h1 className='font-bold'>Blogs</h1>
         </div>
-          <p className="px-16 font-bold">23 jun, 2023</p>
-        <div className="blogs grid grid-cols-4 gap-10 min-h-[550px] px-16">
+          <p className="px-5 font-bold">23 jun, 2023</p>
+          {/* grid grid-cols-4 gap-10 */}
+        <div className="blogs min-h-[550px] px-5">
         {/* Main part */}
         <div className="main-blog col-span-3 py-5">
           <img
@@ -29,9 +31,7 @@ const Blogs = () => {
               <p className="mb-2 font-bold">Coding stack for 2026</p>
               <p className="text-sm">
                 hat is Lorem Ipsum?
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's 
-                standard dummy text ever since the 1500s, five centuries, but also the leap into electronic typesetting,
-                  remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing 
+                 Letraset sheets containing 
                   Lorem Ipsum passages, and more recently with.... <span className="text-blue-500 cursor-pointer text-sm underline">Read</span>
               </p>
             </div>

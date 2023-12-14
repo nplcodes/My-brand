@@ -11,7 +11,8 @@ const Contact = () => {
             </div>
             <h1 className='font-bold'>Contact Me</h1>
         </div>
-        <div className="blogs grid grid-cols-3 gap-10 min-h-[550px] py-5 p-10">
+        {/* grid grid-cols-3 gap-10 min-h-[550px] py-5 p-10 */}
+        <div className="blogs min-h-[800px] ">
             <div className="links flex flex-col items-center">
                 <div className="social-icons py-4">
                     <p className="pb-8 font-bold">Let's talk</p>
@@ -30,17 +31,21 @@ const Contact = () => {
             <div className=" p-10 form col-span-2 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)]">
                 <p className="text-xl mb-10">Send text message</p>
                 <div className="form">
-                    <div className="input-fields grid grid-cols-2 gap-6 py-3">
-                        <input type="text" placeholder="johnson" className="py-2 px-2 rounded-md focus:outline-none border-b"/>
-                        <input type="text" placeholder="Khaled" className="py-2 px-2 rounded-md focus:outline-none border-b"/>
+                    {/* grid grid-cols-2 gap-6 py-3 */}
+                    <div className="input-fields flex flex-col gap-2">
+                        <input type="text" placeholder="surname ...." className="py-2 px-2 rounded-md focus:outline-none border-b"/>
+                        <input type="text" placeholder="name ...." className="py-2 px-2 rounded-md focus:outline-none border-b"/>
                     </div>
-                    <div className="input-fields grid grid-cols-2 gap-6 py-3">
-                        <input type="email" placeholder="example@gmail.com" className="py-2 px-2 rounded-md focus:outline-none border-b"/>
-                        <input type="text" placeholder="+250 780 922 562" className="py-2 px-2 rounded-md focus:outline-none border-b"/>
+                    {/*  grid grid-cols-2 gap-6 */}
+                    <div className="input-fields py-3 pb-5 flex flex-col gap-2">
+                        <input type="email" placeholder="email address" className="py-2 px-2 rounded-md focus:outline-none border-b"/>
+                        <input type="text" placeholder="telephone number" className="py-2 px-2 rounded-md focus:outline-none border-b"/>
                     </div>
-                </div>
-                <div className="relative">
-                    <textarea name="" id="" cols={90} rows={10} className="absolute border rounded-sm right-0 left-0 focus:outline-none px-2" placeholder="Type in message ......."/>
+                    {/* text area */}
+                    <div className="text-area py-3 flex flex-col gap-3">
+                        <textarea placeholder="your message ...." rows={5} className="rounded-md focus:outline-none border px-1 py-1"/>
+                        <button type="submit" className="py-2 px-2 rounded-md focus:outline-none border bg-blue-300 text-white hover:bg-blue-500">Send</button>
+                    </div>
                 </div>
             </div>
         </div>

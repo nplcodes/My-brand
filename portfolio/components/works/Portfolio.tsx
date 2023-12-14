@@ -52,7 +52,7 @@ const Portfolio = () => {
                     <span className={`text-blue-400' ${category ==='designs'? 'cursor-pointer text-blue-800 border-b-4 border-blue-500':''}`} onClick={ () => handleCategoryChange('designs')}>Ui/Ux</span>
               </div>
           </div>
-          {renderingSelectedMenu()}
+           {renderingSelectedMenu()}
       </div>
     )
   }

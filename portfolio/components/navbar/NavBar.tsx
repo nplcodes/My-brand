@@ -20,7 +20,8 @@ const NavBar = () => {
   };
 
   return (
-    <div className="py-5 px-5 fixed top-0 right-0 left-0 bg-blue-500 z-50">
+    // py-5 px-5 fixed top-0 right-0 left-0 
+    <div className="bg-blue-500 z-50 sticky top-0 right-0 left-0">
       <div className="max-w-4xl mx-auto flex justify-between items-center">
         <div className="logo text-4xl font-bold cursor-pointer">
         <ScrollLink to="home" smooth={true} duration={800}>
@@ -28,7 +29,8 @@ const NavBar = () => {
         </ScrollLink>
         </div>
         <nav className="navbar-menu flex gap-10">
-          <ul className="flex gap-5 items-center">
+          {/* flex gap-5 items-center */}
+          <ul className="hidden">
             <span className="cursor-pointer hover:text-red-800 text-white"><Link href='https://www.facebook.com/'>Fb.</Link></span>
             <div className="bg-[#C9CCCE] h-5 w-[1px]"></div>
             <span className="cursor-pointer hover:text-red-800 text-white"><Link href='https://www.instagram.com/'>Inst.</Link></span>

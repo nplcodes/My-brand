@@ -39,7 +39,8 @@ const renderingSelectedMenu = ()=>{
 }
 
   return (
-    <div className='pt-24' id="about">
+    // pt-24
+    <div className='pt-16' id="about">
         <div className="about-header bg-slate-300 bg-transparent flex gap-3 flex-col items-center justify-center py-10">
             <div className='flex items-center justify-center gap-2'>
                 <div className='w-4 h-4 bg-blue-400'></div>
@@ -48,7 +49,8 @@ const renderingSelectedMenu = ()=>{
             </div>
             <h1 className='font-bold'>About Me</h1>
         </div>
-        <div className="about-body grid grid-cols-6">
+        {/* grid grid-cols-6 */}
+        <div className="about-body flex flex-col gap-24">
             <div className="left-nav col-div-1 h-[100px] grid grid-cols-2 gap-2 py-5">
                 <div className={`cursor-pointer rounded-md hover:bg-blue-500 hover:text-white ${about === 'personal' ? 'bg-blue-500 text-white' : ''} flex justify-center items-center py-3 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)]`} onClick={() => setMenu('personal')}>Personal</div>
                 <div className={`cursor-pointer rounded-md hover:bg-blue-500 hover:text-white ${about === 'education' ? 'bg-blue-500 text-white' : ''}  flex justify-center items-center py-3 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)]`} onClick={() => setMenu('education')}>Education</div>
@@ -57,8 +59,9 @@ const renderingSelectedMenu = ()=>{
                 <div className={`cursor-pointer rounded-md hover:bg-blue-500 hover:text-white ${about === 'experience' ? 'bg-blue-500 text-white' : ''} flex justify-center items-center py-3 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)]`} onClick={() => setMenu('experience')}>Experience</div>
                 {/* <div className='cursor-pointer hover:bg-blue-500 hover:text-white flex justify-center items-center py-3 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)]' onClick={() => setMenu('')}>Download Cv</div> */}
             </div>
-            <div className="content col-span-5 min-h-screen p-5 px-10">
-                {renderingSelectedMenu()}
+            {/* content col-span-5 min-h-screen p-5 px-10 */}
+            <div className="px-5">
+              {renderingSelectedMenu()}
             </div>
         </div>
     </div>

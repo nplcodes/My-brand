@@ -3,13 +3,15 @@ import styles from './Main.module.css';
 
 
 const Main = () => {
+
   return (
-    <div className={`relative grid grid-cols-2 bg-cover bg-center pt-24`} style={{backgroundImage: 'url("/images/back.jp")'}} id="home">
+    <div className={` pt-8`} style={{backgroundImage: 'url("/images/back.jp")'}} id="home">
       {/* Object with red background */}
       <div className="absolute inset-0 z-[-1]"></div>
 
       {/* Existing content */}
-      <div className={`hero-section flex justify-center rounded-full ${styles.bounce} shadow-[0_20px_50px_rgba(8,_112,_184,_0.7)]`} style={{}}>
+      {/* rounded-full shadow-[0_20px_50px_rgba(8,_112,_184,_0.7)] */}
+      <div className={`hero-section flex justify-center `} style={{}}>
         <Image
           src="/images/hero-pic.png"
           alt="Description of your image"
@@ -20,7 +22,7 @@ const Main = () => {
       <div className="name-section flex flex-col gap-5 justify-center items-center">
         <div className="name flex flex-col items-center">
           <p className='font-bold italic'>Hey, I'm</p>
-          <h1 className='text-8xl font-extrabold'>Leon</h1>
+          <h1 className={` ${styles.bounce} text-8xl font-extrabold`}>Leon</h1>
         </div>
         <div className="hero-text">
           <ul className="flex gap-2 items-center">

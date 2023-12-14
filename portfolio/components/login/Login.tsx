@@ -16,7 +16,7 @@ const Login = () => {
         <h1 className='font-bold'>Login</h1>
         </div>
         {/* xl:grid xl:grid-cols-2 xl:px-32  */}
-        <div className="min-h-[500px] py-5 shadow-[0_3px_10px_rgb(0,0,0,0.2)] lg:grid :grid-cols-2 lg:px-32">
+        <div className="min-h-[500px] py-5 shadow-[0_3px_10px_rgb(0,0,0,0.2)] xl:grid xl:grid-cols-2 xl:px-32">
           {/* centered items-center justify-center */}
           <div className="centered items-center justify-center hidden xl:inline">
              <Image src="/images/ts.png" alt="login" width={200} height={300}/>

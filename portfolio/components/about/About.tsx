@@ -6,6 +6,7 @@ import Personal from './sub-components/Personal'
 import Education from './sub-components/Education'
 import Experience from './sub-components/Experience'
 import Gallery from './sub-components/Gallery'
+import {motion} from 'framer-motion'
 
 
 
@@ -39,8 +40,12 @@ const renderingSelectedMenu = ()=>{
 }
 
   return (
-    // pt-24
-    <div className='pt-16 lg:px-16' id="about">
+
+    <motion.div
+    initial={{y:-100,opacity: 0}}
+    animate={{opacity:1, y:0}}
+    transition={{delay:0.01, duration:2}}
+     className='pt-16 lg:px-16' id="about">
         <div className="about-header bg-slate-300 bg-transparent flex gap-3 flex-col items-center justify-center py-10">
             <div className='flex items-center justify-center gap-2'>
                 <div className='w-4 h-4 bg-blue-400'></div>
@@ -63,7 +68,7 @@ const renderingSelectedMenu = ()=>{
               {renderingSelectedMenu()}
             </div>
         </div>
-    </div>
+    </motion.div>
   )
 }
 

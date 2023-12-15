@@ -6,7 +6,7 @@ import Web from "./subcomponents/Web"
 import Mob from "./subcomponents/Mob"
 
 const Portfolio = () => {
-  let [category, setCategory] = useState<string>('web')
+  let [category, setCategory] = useState<string>('mob')
 
   const handleCategoryChange = (categ: string)=>{
     setCategory(categ)
@@ -48,7 +48,7 @@ const Portfolio = () => {
               <div className='flex items-center justify-center gap-2'>
                    <span className={`text-blue-400' ${category ==='all'? 'text-blue-800 border-b-4 cursor-pointer border-blue-500':''}`} onClick={ () => handleCategoryChange('all')}>All</span>
                     <span className={`text-blue-400' ${category ==='web'? 'cursor-pointer text-blue-800 border-b-4 border-blue-500':''}`} onClick={ () => handleCategoryChange('web')}>Web</span>
-                    <span className={`text-blue-400' ${category ==='mob'? 'cursor-pointer text-blue-800 border-b-4 border-blue-500':''}`} onClick={ () => handleCategoryChange('mob')}>Mob</span>
+                    <span className={`text-blue-400' ${category ==='mob'? 'cursor-pointer text-blue-800 border-b-4 border-blue-500':''}`} onClick={ () => handleCategoryChange('mob')}>Mobile</span>
                     <span className={`text-blue-400' ${category ==='designs'? 'cursor-pointer text-blue-800 border-b-4 border-blue-500':''}`} onClick={ () => handleCategoryChange('designs')}>Ui/Ux</span>
               </div>
           </div>

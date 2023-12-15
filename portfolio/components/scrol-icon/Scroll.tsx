@@ -9,7 +9,7 @@ import {motion} from 'framer-motion'
 const Scroll = () => {
   return (
     // justify-end
-    <div className="flex justify-center pt-10 xl:justify-end">
+    <div className="flex justify-center pt-0 xl:justify-end">
       <ScrollLink to="about" duration={500} smooth={true}>
         <motion.span
         initial={{opacity:0 , y:-1000}}

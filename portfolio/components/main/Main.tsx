@@ -8,11 +8,11 @@ import {motion} from 'framer-motion'
 const Main = () => {
 
   return (
-    <div className={`pt-6 lg:pt-32 lg:flex lg:justify-between lg:gap-4 lg:px-32`} style={{backgroundImage: 'url("/images/back.jp")'}} id="home">
+    <div className={`pt-6 lg:pt-32 xl:pt-24 lg:flex lg:justify-between h-full lg:gap-4 lg:px-32`} style={{backgroundImage: 'url("/images/back.jp")'}} id="home">
       {/* Object with red background */}
       <div className="absolute inset-0 z-[-1]"></div>
       {/* Existing content */}
-      <motion.div className={`hero-section flex justify-center xl:rounded-full xl:shadow-[0_20px_50px_rgba(8,_112,_184,_0.9)] `} style={{}}
+      <motion.div className={`hero-section flex justify-center xl:rounded-full xl:shadow-[5px_5px_rgba(0,_98,_90,_0.4),_10px_10px_rgba(0,_98,_90,_0.3),_15px_15px_rgba(0,_98,_90,_0.2),_20px_20px_rgba(0,_98,_90,_0.1),_25px_25px_rgba(0,_98,_90,_0.05)] `} style={{}}
       initial={{y:-100,opacity: 0}}
       animate={{opacity:1, y:0}}
       transition={{delay:0.01, duration:2}}
@@ -24,7 +24,7 @@ const Main = () => {
           height={200}
         />
       </motion.div>
-      <motion.div 
+      <motion.div
         initial={{x:-100,opacity: 0}}
         animate={{opacity:1, x:0}}
         transition={{delay:0.1, duration:2}}

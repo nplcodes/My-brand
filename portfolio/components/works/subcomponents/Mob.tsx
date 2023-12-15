@@ -12,7 +12,7 @@ const Mob = () => {
         <div className="middle-large bg-cover bg-no-repeat bg-center rounded-md xl:col-span-2" style={{backgroundImage: 'url(/images/w1.jpg)',}}></div>
           <div className="left-small xl:grid xl:grid-rows-3 xl:gap-1">
           <div className="bg-cover bg-no-repeat bg-center rounded-md" style={{backgroundImage: 'url(/images/w1.jpg)',}}></div>
-          <div className="bg-cover bg-no-repeat bg-center" style={{backgroundImage: 'url(/images/w1.jpg)',}}></div>
+          <div className="bg-cover bg-no-repeat bg-center" style={{backgroundImage: 'url(/images/porto.png)',}}></div>
         </div>
   </div>
   )

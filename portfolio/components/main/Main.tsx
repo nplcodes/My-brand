@@ -8,7 +8,7 @@ import {motion} from 'framer-motion'
 const Main = () => {
 
   return (
-    <div className={`pt-6 lg:pt-32 xl:pt-24 lg:flex lg:justify-between h-full lg:gap-4 lg:px-32`} style={{backgroundImage: 'url("/images/back.jp")'}} id="home">
+    <div className={`pt-6 lg:pt-32 xl:pt-24 xl:pb-32 lg:flex lg:justify-between h-full lg:gap-4 lg:px-32`} style={{backgroundImage: 'url("/images/back.jp")'}} id="home">
       {/* Object with red background */}
       <div className="absolute inset-0 z-[-1]"></div>
       {/* Existing content */}

@@ -1,10 +1,12 @@
 import Blogs from './blogs/Blogs'
+import WelcamePage from './welcame/WelcamePage'
 
 
 const Admin = () => {
   return (
-    <div>
-        <Blogs />
+    <div className='relative'>
+        {/* <Blogs /> */}
+        <WelcamePage />
     </div>
   )
 }

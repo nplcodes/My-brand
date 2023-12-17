@@ -31,7 +31,7 @@ const Main = () => {
       className="name-section flex flex-col gap-5 justify-center items-center">
         <div className="name flex flex-col items-center">
           <p className='font-bold italic'>Hey, I'm</p>
-          <h1 className={` ${styles.bounce} text-8xl font-extrabold`}>Leon</h1>
+          <h1 className={` ${styles.bounce} text-8xl font-extrabold`}>Leon </h1>
         </div>
         <div className="hero-text">
           <ul className="flex gap-2 items-center">

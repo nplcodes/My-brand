@@ -1,17 +1,21 @@
 import Main from "./adminmain/Main"
 import Sidebar from "./adminsidebar/Sidebar"
 import Topbar from "./admintopbar/Topbar"
+import { Provider } from "react-redux"
+import store from "@/redux/store"
 
 const WelcamePage = () => {
   return (
-    <div className="grid grid-cols-5 mt-20 h-screen px-32">
-        <div className="sidebar">
-            <Sidebar />
-        </div>
-        <div className="main col-span-4">
-            <Main />
-        </div>
-    </div>
+    <Provider store={store}>
+      <div className="grid grid-cols-5 mt-20 h-screen px-32">
+          <div className="sidebar">
+              <Sidebar />
+          </div>
+          <div className="main col-span-4">
+              <Main />
+          </div>
+      </div>
+    </Provider>
   )
 }
 

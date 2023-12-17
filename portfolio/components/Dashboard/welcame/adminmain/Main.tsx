@@ -9,17 +9,58 @@ import NewSkill from './Forms/NewSkill'
 import NewWork from './Forms/NewMyWork'
 import NewGallery from './Forms/NewGallery'
 import Skills from './skills/Skills'
+import { useDispatch, useSelector } from 'react-redux';
+
+
+interface RootState {
+  selectedComponent: { selected: String };
+}
+
 
 const Main = () => {
+  const selectedComponent = useSelector((state: RootState) => state.selectedComponent.selected);
+  const dispatch = useDispatch();
+
+  console.log(selectedComponent)
+
+  const renderSelectedComponent = () => {
+    switch (selectedComponent) {
+      case 'Blogs':
+        return <Blogs />;
+      case 'Works':
+        return <Works />;
+      case 'Gallery':
+        return <Gallery />;
+      case 'Home':
+        return <Home />;
+      case 'Account':
+        return <Account />;
+      case 'NewBlogs':
+        return <NewBlogs />;
+      case 'NewSkill':
+        return <NewSkill />;
+      case 'NewWork':
+        return <NewWork />;
+      case 'NewGallery':
+        return <NewGallery />;
+      case 'Skills':
+        return <Skills />;
+      default:
+        return null;
+    }
+  };
+
+
   return (
     <div className='border h-screen relative'>
-        <div className='py-2 border px-1 fixed w-full flex flex-col gap-5 z-100 bg-gray-300'>
+        <div className='py-2 border px-1 fixed w-[67%] flex flex-col gap-5 z-100 bg-gray-300'>
           <p className='font-bold'>ADMIN PAGE</p>
           <div className="main-content px-1">
            <Topbar />
         </div>
         </div>
         <div className="content z-0 mt-32">
+          {renderSelectedComponent()}
             {/* <Blogs /> */}
             {/* <Works /> */}
             {/* <Gallery /> */}
@@ -29,7 +70,7 @@ const Main = () => {
             {/* <NewSkill /> */}
             {/* <NewWork /> */}
             {/* <NewGallery /> */}
-            <Skills />
+            {/* <Skills /> */}
         </div>
     </div>
   )

@@ -4,6 +4,11 @@ import Gallery from './gallery/Gallery'
 import Works from './works/Works'
 import Home from './home/Home'
 import Account from './account/Settings'
+import NewBlogs from './Forms/NewBlogs'
+import NewSkill from './Forms/NewSkill'
+import NewWork from './Forms/NewMyWork'
+import NewGallery from './Forms/NewGallery'
+import Skills from './skills/Skills'
 
 const Main = () => {
   return (
@@ -15,11 +20,16 @@ const Main = () => {
         </div>
         </div>
         <div className="content z-0 mt-32">
-            <Blogs />
+            {/* <Blogs /> */}
             {/* <Works /> */}
             {/* <Gallery /> */}
             {/* <Home /> */}
             {/* <Account /> */}
+            {/* <NewBlogs /> */}
+            {/* <NewSkill /> */}
+            {/* <NewWork /> */}
+            {/* <NewGallery /> */}
+            <Skills />
         </div>
     </div>
   )

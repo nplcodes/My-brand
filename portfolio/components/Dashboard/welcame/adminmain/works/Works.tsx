@@ -56,7 +56,6 @@ const Works = () => {
 <div className="render">
   {RenderSelectedComponent()}
 </div>
-
 </motion.div>
   )
 }

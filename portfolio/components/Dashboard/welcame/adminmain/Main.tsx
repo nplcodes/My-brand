@@ -10,6 +10,7 @@ import NewWork from './Forms/NewMyWork'
 import NewGallery from './Forms/NewGallery'
 import Skills from './skills/Skills'
 import { useDispatch, useSelector } from 'react-redux';
+import Messages from './messages/Messages'
 
 
 interface RootState {
@@ -41,6 +42,8 @@ const Main = () => {
         return <NewSkill />;
       case 'NewWork':
         return <NewWork />;
+      case 'Messages':
+          return <Messages />;
       case 'NewGallery':
         return <NewGallery />;
       case 'Skills':

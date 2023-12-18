@@ -44,7 +44,7 @@ const Sidebar = () => {
                 <p className="text-lg"><TfiGallery /></p>
                 <span>Gallery</span>
             </div>
-            <div className="menu flex flex-row items-center gap-3 rounded-md cursor-pointer hover:bg-blue-500 hover:font-bold hover:text-white">
+            <div onClick={() => handleSetSelectedComponent('Messages')} className="menu flex flex-row items-center gap-3 rounded-md cursor-pointer hover:bg-blue-500 hover:font-bold hover:text-white">
                 <p className="text-lg"><LuMessagesSquare /></p>
                 <span>Messages</span>
             </div>

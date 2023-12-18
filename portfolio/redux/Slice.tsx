@@ -4,7 +4,7 @@ import { createSlice } from '@reduxjs/toolkit';
 const selectedComponentSlice = createSlice({
   name: 'selectedComponent',
   initialState:{
-    selected: 'Home'
+    selected: 'Messages'
   },
   reducers: {
     setSelectedComponent: (state, action) => {

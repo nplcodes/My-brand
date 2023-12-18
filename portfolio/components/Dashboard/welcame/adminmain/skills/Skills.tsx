@@ -9,7 +9,7 @@ import { IoMdAdd } from "react-icons/io";
 
 
 const Skills = () => {
-  const [renderDiv, setenderDiv] = useState<String>('works')
+  const [renderDiv, setenderDiv] = useState<String>('skills')
   const handleOnclick = (selected: string) =>{
     setenderDiv(selected)
   }

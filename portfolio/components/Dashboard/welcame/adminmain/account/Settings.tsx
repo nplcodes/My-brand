@@ -1,14 +1,6 @@
 "use client"
 
 import Image from "next/image"
-import { HiOutlineFolderDownload } from "react-icons/hi";
-import { FaLinkedinIn, FaFacebookF } from "react-icons/fa";
-import { FaInstagram } from "react-icons/fa6";
-import Topbar from "../../admintopbar/Topbar";
-import { IoEyeOutline } from "react-icons/io5";
-//<IoEyeOutline />
-
-
 
 
 const Account = () => {
@@ -16,9 +8,6 @@ const Account = () => {
     <div className="px-32">
       <div className="flex justify-center items-center py-5 gap-10">
         <div className="header-Account font-bold">Account information</div>
-        <div className="main-content px-1">
-          <Topbar />
-        </div>
       </div>
       {/* Info page */}
       <div className="info">

@@ -1,7 +1,29 @@
 import {motion} from 'framer-motion'
-import Topbar from '../../admintopbar/Topbar'
+import { MdOutlineFilterList } from 'react-icons/md'
+import { IoMdAdd } from 'react-icons/io'
+import { useState } from 'react'
+import NewWork from '../Forms/NewMyWork'
+import WorksList from './WorksList'
 
 const Works = () => {
+  const [renderDiv, setenderDiv] = useState<String>('works')
+  const handleOnclick = (selected: string) =>{
+    setenderDiv(selected)
+  }
+  const RenderSelectedComponent = () =>{
+    switch (renderDiv) {
+      case 'works':
+        return <WorksList />
+        break;
+      case 'new':
+        return <NewWork />
+        break;
+
+      default:
+        return "No selected div"
+        break;
+    }
+  }
   return (
 <motion.div
  initial={{opacity: 0, y:-100}}
@@ -18,42 +40,23 @@ const Works = () => {
     </ul>
   </div>
   <div className="main-content px-1">
-    <Topbar />
+  <div>
+          <main className="flex">
+              <div onClick={()=> handleOnclick('works')} className="menu flex flex-row items-center gap-3 rounded-md cursor-pointer hover:bg-blue-500  hover:text-white hover:font-bold">
+                  <span className="text-xl"><MdOutlineFilterList /></span>
+              </div>
+              <div onClick={()=> handleOnclick('new')} className="menu flex flex-row items-center gap-3 rounded-md cursor-pointer hover:bg-blue-500 hover:font-bold hover:text-white">
+                  <span className="text-xl font-bold"><IoMdAdd /></span>
+              </div>
+          </main>
+    </div>
   </div>
 </div>
 {/* Works cards ........... */}
-<div className="all-blogs space-y-3">
-    <div className="card card-compact bg-base-100 shadow-xl xl:grid xl:grid-cols-3">
-      <div className="card-body cursor-pointer">
-        <figure><img src="https://designers.hubspot.com/hubfs/Inspire/Uploads/HubSpot-CMS-Website-Example.jpg" alt="Shoes" className='h-48 w-full'/></figure>
-        <h2 className="card-title">Online issue dispatch (NPC)</h2>
-        <div className="lk-comm flex flex-row gap-2 items-center justify-between">
-          <div className="comments"> <button className='bg-blue-900 text-white px-6 py-1 rounded-sm'>Visit</button></div>
-        </div>
-    </div>
-    <div className="card-body cursor-pointer">
-        <figure><img src="https://cdn.sisense.com/wp-content/uploads/dashboard-4-300-1-1024x581.png" alt="Shoes" className='h-48 w-full' /></figure>
-        <h2 className="card-title">Book hot DJ online</h2>
-        <div className="lk-comm flex flex-row gap-2 items-center justify-between">
-          <div className="comments"> <button className='bg-blue-900 text-white px-6 py-1 rounded-sm'>Visit</button></div>
-        </div>
-    </div>
-    <div className="card-body cursor-pointer">
-        <figure><img src="https://149842033.v2.pressablecdn.com/wp-content/uploads/2019/11/bootstrap-login-form-1000x750.jpg" alt="Shoes" className='h-48 w-full' /></figure>
-        <h2 className="card-title">NPL shopping mall</h2>
-        <div className="lk-comm flex flex-row gap-2 items-center justify-between">
-          <div className="comments"> <button className='bg-blue-900 text-white px-6 py-1 rounded-sm'>Visit</button></div>
-        </div>
-    </div>
-    <div className="card-body cursor-pointer">
-        <figure><img src="https://getshogun.com/wp-content/uploads/2022/04/leesa-social-impact-1024x563.jpg" alt="Shoes" className='h-48 w-full '/></figure>
-        <h2 className="card-title">work with us</h2>
-        <div className="lk-comm flex flex-row gap-2 items-center justify-between">
-          <button className='bg-blue-900 text-white px-6 py-1 rounded-sm'>Visit</button>
-        </div>
-    </div>
-    </div>
+<div className="render">
+  {RenderSelectedComponent()}
 </div>
+
 </motion.div>
   )
 }

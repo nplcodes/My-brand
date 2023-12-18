@@ -51,7 +51,7 @@ const Blogs = () => {
                   <span className="text-xl font-bold"><IoMdAdd /></span>
               </div>
           </main>
-      </div>
+    </div>
   </div>
 </div>
 <div className="render">

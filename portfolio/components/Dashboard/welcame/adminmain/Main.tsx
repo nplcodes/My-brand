@@ -54,7 +54,7 @@ const Main = () => {
   return (
     <div className='border h-screen relative'>
         <div className='py-10 border px-1 fixed w-[68%] flex flex-col gap-5 z-100 bg-gray-300'>
-          <p className='font-bold'>ADMIN PAGE</p>
+          <p className='font-bold'>NPL Codes Ltd</p>
         </div>
         <div className="content z-0 mt-32">
           {renderSelectedComponent()}

@@ -2,13 +2,17 @@
 
 import Image from "next/image"
 import { motion } from 'framer-motion';
+import Topbar from "../../admintopbar/Topbar";
 
 
 const Gallery = () => {
   return (
     <div>
-      <div className="flex justify-center items-center py-5">
-        <div className="header-personal font-bold">MY GALLERY </div>
+      <div className="flex justify-center items-center gap-10 py-5">
+        <div className="header-personal font-bold">MY GALLERY</div>
+        <div className="main-content px-1">
+          <Topbar />
+        </div>
     </div> 
     {/* grid grid-cols-3 gap-2 py-10 */}
     <div className="all-skillls-container flex flex-col gap-6 items-center lg:grid lg:grid-cols-2 lg:gap-2 lg:py-10 xl:grid-cols-3  ">

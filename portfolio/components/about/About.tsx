@@ -8,6 +8,8 @@ import Education from './sub-components/Education';
 import Experience from './sub-components/Experience';
 import Gallery from './sub-components/Gallery';
 
+
+
 const About = () => {
   const [about, setAbout] = useState<string>('gallery');
 

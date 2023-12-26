@@ -1,15 +1,16 @@
-import Link from 'next/link'
-import React from 'react'
+'use client'
+
+import LogoutButton from "@/components/LogoutButton/LogoutButton"
+import { useSession } from "next-auth/react"
+import Link from "next/link"
 
 const NavBar = () => {
+  const {data: session} = useSession()
   return (
 <div className="navbar bg-base-100 shadow-[0_3px_10px_rgb(0,0,0,0.2)] fixed top-0 left-0 right-0 z-50">
   <div className="flex-1">
     <a className="btn btn-ghost text-xl">NPL</a>
-    {/* <div className='flex flex-row gap-3'>
-      <span className='cursor-pointer hover:bg-blue-500 hover:text-white px-5 py-2 rounded-md'>Users</span>
-      <span className='cursor-pointer hover:bg-blue-500 hover:text-white px-5 py-2 rounded-md'>Blogs</span>
-    </div> */}
+
   </div>
   <div className="flex-none">
     <div className="dropdown dropdown-end">
@@ -36,18 +37,25 @@ const NavBar = () => {
         </div>
       </div>
       <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-        <li>
-          <a className="justify-between">
-            Profile
-            <span className="badge">New</span>
-          </a>
-        </li>
-        <li><a>Blogs</a></li>
-        <li><a>Users</a></li>
-        <li><a>Settings</a></li>
-        <Link href="/">
-           <li>Logout</li>
-        </Link>
+      {session?.user ? (
+        <div>
+          <li>
+            <a className="justify-between">
+              Profile
+              <span className="badge">New</span>
+            </a>
+          </li>
+          <li>Blogs</li>
+          <li>Users</li>
+          <li>Settings</li>
+          <LogoutButton />
+        </div>
+        ):
+        (
+          <Link href='/login'>
+            <li>Sign In</li>
+          </Link>
+        )}
       </ul>
     </div>
   </div>

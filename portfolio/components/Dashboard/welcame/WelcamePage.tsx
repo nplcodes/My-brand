@@ -1,6 +1,5 @@
 import Main from "./adminmain/Main"
 import Sidebar from "./adminsidebar/Sidebar"
-import Topbar from "./admintopbar/Topbar"
 import { Provider } from "react-redux"
 import store from "@/redux/store"
 

@@ -1,14 +1,18 @@
-import Blogs from './blogs/Blogs'
+'use client'
+
+import { useSession } from 'next-auth/react'
 import WelcamePage from './welcame/WelcamePage'
 
-
 const Admin = () => {
-  return (
+  const { data: session } = useSession()
+  return session?.user ? (
     <div className='relative'>
-        {/* <Blogs /> */}
-        <WelcamePage />
-    </div>
-  )
+       <WelcamePage />
+    </div>) 
+    :(
+    <div className='py-64 px-64'>
+      Acces Denied, Login to Admin :)
+    </div>)
 }
 
 export default Admin

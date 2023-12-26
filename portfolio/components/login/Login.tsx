@@ -1,9 +1,47 @@
+'use client'
+
+import { error } from "console";
+import { signIn } from "next-auth/react";
 import Image from "next/image"
 import Link from "next/link";
-import { AiTwotoneBank } from "react-icons/ai";
+import { useRouter } from "next/navigation";
+import React, { useState } from "react";
+
 
 
 const Login = () => {
+  const router = useRouter()
+const [email, setEmail] = useState<string>()
+const [password, setPassword] = useState<string>()
+
+const handleEmailOnchange = (e:React.ChangeEvent<HTMLInputElement>) =>{
+  e.preventDefault()
+  setEmail(e.target.value)
+}
+
+const handlePasswordOnchange = (e:React.ChangeEvent<HTMLInputElement>) =>{
+  e.preventDefault()
+  setPassword(e.target.value)
+}
+
+
+const formSubmit= async(e: React.FormEvent<HTMLFormElement>) =>{
+  e.preventDefault()
+  const signinData = await signIn('credentials', {
+    email: email,
+    password: password,
+    redirect: false
+  });
+
+  if(signinData?.error){
+    console.log(signinData.error)
+  }else{
+    router.refresh()
+    router.push('/admin')
+  }
+}
+
+
   return (
     <div className="login min-h-[550px] px-5 xl:px-16">
         <div className="about-header bg-slate-300 flex gap-3 flex-col items-center justify-center py-10 bg-transparent">
@@ -21,25 +59,23 @@ const Login = () => {
           <div className="centered items-center justify-center hidden xl:inline">
              <Image src="/images/ts.png" alt="login" width={200} height={300}/>
           </div>
-          <div className="field-input px-10 flex flex-col gap-4 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)]"> 
+          <form onSubmit={formSubmit} className="field-input px-10 flex flex-col gap-4 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)]"> 
                 <div className="each-field py-10">
                    <p className="text-2xl font-bold flex justify-center"> Login page</p>
                 </div>
                 <div className="each-field">
-                   <input type="email" placeholder="Email ....." className="input input-bordered w-full max-w-xs focus:outline-none" />
+                   <input onChange={handleEmailOnchange} value={email} type="email" placeholder="Email ....." className="input input-bordered w-full max-w-xs focus:outline-none" />
                 </div>
                 <div className="each-field">
-                   <input type="password" placeholder="Password ....." className="input input-bordered w-full max-w-xs focus:outline-none" />
+                   <input onChange={handlePasswordOnchange} value={password} type="password" placeholder="Password ....." className="input input-bordered w-full max-w-xs focus:outline-none" />
                 </div>
                 <div className="each-field flex items-center gap-3">
                   <input type="checkbox" className="checkbox bg-blue-500 text-white" />
                   <p>Remember me</p>
                 </div>
-                <Link href="/admin">
-                  <button className="btn w-full bg-blue-500 text-white">Login</button>
-                </Link>
+                  <button type="submit" className="btn w-full bg-blue-500 text-white">Login</button>
                <Link href='/'> <p>Back Home</p></Link>
-             </div>
+          </form>
         </div>
     </div>
   )

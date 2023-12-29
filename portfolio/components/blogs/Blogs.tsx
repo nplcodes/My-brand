@@ -1,12 +1,42 @@
 "use client"
 
-
+import { useEffect, useState } from "react";
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { CiHeart } from 'react-icons/ci';
 import { GoCommentDiscussion } from 'react-icons/go';
 
+
+
+interface Post {
+  id: number;
+  title: string;
+  description: string;
+  image: string;
+  category: string;
+  priority: string;
+}
+
 const Blogs = () => {
+  const [data, setdata] = useState<Post[]>([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch('/api/blogs');
+        if (!response.ok) {
+          throw new Error('Failed to fetch data');
+        }
+
+        const posts: Post[] = await response.json();
+        setdata(posts);
+      } catch (error) {
+        console.error('Error fetching posts:', error);
+      }
+    };
+
+    fetchData();
+  }, []);
   return (
     <div id="blog" className="pt-24 z-0">
       <div className="blog-header bg-slate-300 flex gap-3 flex-col items-center justify-center py-10 bg-transparent">
@@ -18,32 +48,24 @@ const Blogs = () => {
         <h1 className='font-bold'>Blogs</h1>
       </div>
       <div className="blogs min-h-[550px] px-5 xl:grid xl:grid-cols-5 xl:gap-10">
+        {/* Main Part........................................................................ */}
         <div className="main-blog col-span-3 py-5">
           <motion.div
-            whileHover={{ scale: 1.05 }}
+            whileHover={{ scale: 1.01 }}
             whileTap={{ scale: 0.95 }}
             className="relative overflow-hidden rounded-md"
           >
             <img
-              src="https://source.unsplash.com/800x600/?nature,water"
+              src={data[0]?.image}
               alt="Main Blog Post"
               className="w-full h-96 object-cover rounded-md"
             />
-            <div className="overlay absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 transition-opacity duration-300 ease-in-out opacity-0">
-              <div className="text-center text-white">
-                <p className="mb-2 font-bold">Coding stack for 2026</p>
-                <p className="text-sm">
-                  What is Lorem Ipsum? Letraset sheets containing Lorem Ipsum passages, and more recently with....
-                  <span className="text-blue-500 cursor-pointer text-sm underline">Read</span>
-                </p>
-              </div>
-            </div>
           </motion.div>
           <div className="p-2">
             <div className="text-xl mb-1 py-5">
-              <p className="mb-2 font-bold">Coding stack for 2026</p>
+              <p className="mb-2 font-bold">{data[0]?.title}</p>
               <p className="text-sm">
-                What is Lorem Ipsum? Letraset sheets containing Lorem Ipsum passages, and more recently with....
+                {data[0]?.description}
                 <span className="text-blue-500 cursor-pointer text-sm underline">Read</span>
               </p>
             </div>
@@ -55,54 +77,24 @@ const Blogs = () => {
             </div>
           </div>
         </div>
+        {/* Side bar articles.............................. */}
         <div className="col-span-2 p-2 lg:px-16 xl:px-1">
           <p className="text-lg font-bold mb-2">Recent articles</p>
           <div className="recent-blogs grid grid-rows-4 gap-2 lg:grid-cols-2 xl:grid-cols-1 xl:justify-start">
+          {data?.map(post => (
             <motion.div
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="recent-card flex items-center gap-3 cursor-pointer px-5 shadow-[0_3px_10px_rgb(0,0,0,0.2)] rounded-md"
+              className="recent-card flex items-center gap-3 w-full cursor-pointer px-5 shadow-[0_3px_10px_rgb(0,0,0,0.2)] rounded-md"
             >
-              <Image src="/images/linux-blog.jpg" alt="recent" width={80} height={80} className="rounded-md" />
+              <img src={post.image} alt="recent" width={80} height={80} className="rounded-md" />
               <div className="recent-card-text flex flex-col gap-1">
-                <p className="font-bold">Best linux for devs</p>
+                <p className="font-bold">{post.title}</p>
                 <p className="text-xs">25 June 2023</p>
               </div>
             </motion.div>
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="recent-card flex items-center gap-3 cursor-pointer px-5 shadow-[0_3px_10px_rgb(0,0,0,0.2)] rounded-md"
-            >
-              {/* Repeat similar styling for other recent cards */}
-              <Image src="/images/ngnix-blog.webp" alt="recent" width={80} height={80} className="rounded-md" />
-              <div className="recent-card-text flex flex-col gap-1">
-                <p className="font-bold">Why nginx?</p>
-                <p className="text-xs">10 May 2023</p>
-              </div>
-            </motion.div>
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="recent-card flex items-center gap-3 px-5  cursor-pointer shadow-[0_3px_10px_rgb(0,0,0,0.2)] rounded-md"
-            >
-              <Image src="/images/vercel-blog.webp" alt="recent" width={80} height={80} className="rounded-md" />
-              <div className="recent-card-text flex flex-col gap-1">
-                <p className="font-bold">Versel for next 14.0</p>
-                <p className="text-xs">10 Aug 2022</p>
-              </div>
-            </motion.div>
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="recent-card flex items-center gap-3 cursor-pointer px-5 shadow-[0_3px_10px_rgb(0,0,0,0.2)] rounded-md"
-            >
-              <Image src="/images/hero-pic.png" alt="recent" width={80} height={80} className="rounded-md" />
-              <div className="recent-card-text flex flex-col gap-1">
-                <p className="font-bold">Popular stack</p>
-                <p className="text-xs">25 June 2023</p>
-              </div>
-            </motion.div>
+            ))}
+            
           </div>
         </div>
       </div>

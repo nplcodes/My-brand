@@ -1,41 +1,40 @@
 import { db } from "@/lib/db";
 import { NextResponse } from "next/server";
 
+
+interface MessageInfo {
+    fname: string;
+    surname: string,
+    email: string,
+    telephone: string,
+    content_message: string
+  }
+
 // Add a photo
 export const POST =async (req: Request, res:Response) => {
-    const body = await req.json()
+    const body: MessageInfo = await req.json()
     const {
-        name,
         surname,
+        fname,
         email,
         telephone,
-        message
+        content_message
     } = body;
 
-    const msg = await db.messages.create({
-        data:{
-            name,
+    const msg = await db.contact.create({
+        data: {
             surname,
+            fname,
             email,
             telephone,
-            message,
+            content_message
         }
     })
     if (msg) {
         try {
-            return NextResponse.json({
-                message: "Message is successfully sent",
-                data: msg,
-            },
-            {
-                status: 200
-            }
-            )
+            return NextResponse.json(body)
         } catch (error) {
-            return NextResponse.json({
-                message: "Error",
-                error
-            })
+            return NextResponse.json(error)
         }
     }
     else{
@@ -50,13 +49,10 @@ export const POST =async (req: Request, res:Response) => {
 
 // Get all Photos
 export const GET =async (req: Request, res: Response) => {
-    const msgs = await db.messages.findMany()
+    const msgs = await db.contact.findMany()
     if (msgs.length > 0) {
         try {
-            return NextResponse.json({
-                Message: "All Messages: ",
-                data: msgs
-            })
+            return NextResponse.json(msgs)
         } catch (error) {
             console.error(error)
         }

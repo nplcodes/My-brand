@@ -10,7 +10,7 @@ export const POST =async (req: Request, res:Response) => {
         category,
         priority,
         image
-    } = body
+    } = body;
 
     const post = await db.post.create({
         data:{
@@ -53,10 +53,7 @@ export const GET =async (req: Request, res: Response) => {
     const posts = await db.post.findMany()
     if (posts.length > 0) {
         try {
-            return NextResponse.json({
-                Message: "All posts: ",
-                data: posts
-            })
+            return NextResponse.json(posts)
         } catch (error) {
             console.error(error)
         }

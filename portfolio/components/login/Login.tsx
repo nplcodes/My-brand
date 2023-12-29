@@ -54,10 +54,10 @@ const formSubmit= async(e: React.FormEvent<HTMLFormElement>) =>{
         <h1 className='font-bold'>Login</h1>
         </div>
         {/* xl:grid xl:grid-cols-2 xl:px-32  */}
-        <div className="min-h-[500px] py-5 shadow-[0_3px_10px_rgb(0,0,0,0.2)] xl:grid xl:grid-cols-2 xl:px-32">
+        <div className="min-h-[500px] py-5 xl:grid xl:grid-cols-2 xl:px-32 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)]">
           {/* centered items-center justify-center */}
-          <div className="centered items-center justify-center hidden xl:inline">
-             <Image src="/images/ts.png" alt="login" width={200} height={300}/>
+          <div className="centered items-center justify-center  hidden xl:flex">
+             <Image src="/images/login-svg.svg" alt="login" width={400} height={800}/>
           </div>
           <form onSubmit={formSubmit} className="field-input px-10 flex flex-col gap-4 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)]"> 
                 <div className="each-field py-10">

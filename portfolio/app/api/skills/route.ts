@@ -1,13 +1,20 @@
 import { db } from "@/lib/db";
 import { NextResponse } from "next/server";
 
+
+interface SkillInfo {
+    title: string;
+    percentage: string;
+    description: string,
+    image: File | string | null;
+  }
 // create a post
 export const POST =async (req: Request, res:Response) => {
-    const body = await req.json()
+    const body: SkillInfo = await req.json()
     const {
         title,
         description,
-        category,
+        percentage,
         image
     } = body
 
@@ -15,7 +22,7 @@ export const POST =async (req: Request, res:Response) => {
         data:{
             title,
             description,
-            category,
+            percentage,
             image
         }
     })
@@ -51,10 +58,7 @@ export const GET =async (req: Request, res: Response) => {
     const skills = await db.skill.findMany()
     if (skills.length > 0) {
         try {
-            return NextResponse.json({
-                Message: "All Skills set: ",
-                data: skills
-            })
+            return NextResponse.json(skills)
         } catch (error) {
             console.error(error)
         }

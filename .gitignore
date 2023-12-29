@@ -1,2 +1,12 @@
 
 *.exe
+
+.node_modules
+
+node_modules
+.gitignore
+.env
+.package.json
+.package-lock.json
+.migration.sql
+migration

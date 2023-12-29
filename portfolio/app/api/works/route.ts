@@ -1,60 +1,54 @@
 import { db } from "@/lib/db";
 import { NextResponse } from "next/server";
 
-// create a post
-export const POST =async (req: Request, res:Response) => {
-    const body = await req.json()
-    const {
-        percentage,
-        description,
-        category,
-        image
-    } = body
-
-    const work = await db.work.create({
-        data:{
-            description,
-            category,
-            percentage,
-            image
-        }
-    })
-    if (work) {
-        try {
-            return NextResponse.json({
-                message: "Work is successfully created",
-                data: work,
-            },
-            {
-                status: 200
-            }
-            )
-        } catch (error) {
-            return NextResponse.json({
-                message: "Error",
-                error
-            })
-        }
-    }
-    else{
-        return NextResponse.json({
-            message: "Internal server error"
-        },
-        {
-            status: 500
-        })
-    }
+interface PostRequestBody {
+    title: string;
+    colaborated: string;
+    description: string;
+    category: string;
+    image: string;
 }
+
+export const POST = async (req: Request, res: Response) => {
+    try {
+        const body: PostRequestBody = await req.json();
+
+        const { title, colaborated, description, category, image } = body;
+
+        const works = await db.work.create({
+            data: {
+                title,
+                description,
+                category,
+                colaborated,
+                image,
+            },
+        });
+
+        if (works) {
+           return NextResponse.json(works);
+        } else {
+           return NextResponse.json({
+                message: 'Internal server error',
+            });
+        }
+    } catch (error) {
+        console.error(error);
+
+       return NextResponse.json({
+            message: 'Internal server error',
+        });
+    }
+};
+
+
 
 // Get all posts
 export const GET =async (req: Request, res: Response) => {
     const works = await db.work.findMany()
     if (works.length > 0) {
         try {
-            return NextResponse.json({
-                Message: "All works: ",
-                data: works
-            })
+            return NextResponse.json(works)
         } catch (error) {
             console.error(error)
         }
@@ -66,4 +60,3 @@ export const GET =async (req: Request, res: Response) => {
     }
    
 }
-

@@ -1,16 +1,18 @@
 import { db } from "@/lib/db";
 import { NextResponse } from "next/server";
 
+
 // Add a photo
 export const POST =async (req: Request, res:Response) => {
     const body = await req.json()
     const {
-        image
+        image,
+        description
     } = body;
 
     const photo = await db.gallery.create({
         data:{
-            image
+            image,
         }
     })
     if (photo) {
@@ -45,10 +47,7 @@ export const GET =async (req: Request, res: Response) => {
     const photos = await db.gallery.findMany()
     if (photos.length > 0) {
         try {
-            return NextResponse.json({
-                Message: "All photos: ",
-                data: photos
-            })
+            return NextResponse.json(photos)
         } catch (error) {
             console.error(error)
         }

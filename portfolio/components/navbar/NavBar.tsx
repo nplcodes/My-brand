@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 import { RiMenu3Fill } from 'react-icons/ri';
-import Image from 'next/image';
 import { FaTimes } from "react-icons/fa";
 import Link from 'next/link';
 import { Link as ScrollLink, animateScroll as scroll } from 'react-scroll';
@@ -24,12 +23,12 @@ const NavBar = () => {
     <motion.div 
     initial={{y:-100,opacity: 0}}
     animate={{opacity:1, y:0}}
-    transition={{delay:0.001, duration:1}}
+    transition={{duration:1}}
     className="bg-blue-500 z-50 sticky top-0 right-0 left-0 md:py-3 md:px-3 xl:fixed xl:px-5">
       <div className="max-w-4xl mx-auto flex justify-between items-center">
         <div className="logo text-4xl font-bold cursor-pointer">
         <ScrollLink to="home" smooth={true} duration={800}>
-          <Image alt="logo" width={60} height={60} src="/images/LOGO.png" />
+          <img alt="logo" width={100} height={100} src="/images/LOGO.png" className='text-white' />
         </ScrollLink>
         </div>
         <nav className="navbar-menu flex gap-10">

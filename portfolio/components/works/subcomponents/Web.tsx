@@ -49,7 +49,7 @@ const Web = () => {
             </motion.div>
         </div>
         {/* col-span-2 */}
-        <motion.div whileHover={{scale:1.2}} transition={{duration:0.6}}  className="middle-large bg-cover bg-no-repeat bg-center rounded-md xl:col-span-2 cursor-pointer" style={{backgroundImage: 'url(/images/w1.jpg)',}}></motion.div>
+        <motion.div whileHover={{scale:1.01}} transition={{duration:0.6}}  className="middle-large bg-cover bg-no-repeat bg-center rounded-md xl:col-span-2 cursor-pointer" style={{backgroundImage: 'url(/images/w1.jpg)',}}></motion.div>
           <div className="left-small xl:grid xl:grid-rows-3 xl:gap-1">
           <motion.div 
             whileHover={{scale:1.05}}

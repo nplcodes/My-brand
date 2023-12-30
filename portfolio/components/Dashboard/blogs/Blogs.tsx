@@ -7,6 +7,7 @@ import { useState } from 'react'
 
 const Blogs = () => {
   const [renderDiv, setenderDiv] = useState<String>('blogs')
+  const [renderViewOrEdit, setenderViewOrEdit] = useState<String>('edit')
   const handleOnclick = (selected: string) =>{
     setenderDiv(selected)
   }
@@ -20,10 +21,11 @@ const Blogs = () => {
         break;
 
       default:
-        return "No selected div"
+        return "<No selected div />"
         break;
     }
   }
+
   return (
 <motion.div
  initial={{opacity: 0, y:-100}}

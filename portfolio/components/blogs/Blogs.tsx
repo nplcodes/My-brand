@@ -1,10 +1,10 @@
 "use client"
 
 import { useEffect, useState } from "react";
-import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { CiHeart } from 'react-icons/ci';
 import { GoCommentDiscussion } from 'react-icons/go';
+import Link from "next/link";
 
 
 
@@ -82,17 +82,19 @@ const Blogs = () => {
           <p className="text-lg font-bold mb-2">Recent articles</p>
           <div className="recent-blogs grid grid-rows-4 gap-2 lg:grid-cols-2 xl:grid-cols-1 xl:justify-start">
           {data?.map(post => (
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="recent-card flex items-center gap-3 w-full cursor-pointer px-5 shadow-[0_3px_10px_rgb(0,0,0,0.2)] rounded-md"
-            >
-              <img src={post.image} alt="recent" width={80} height={80} className="rounded-md" />
-              <div className="recent-card-text flex flex-col gap-1">
-                <p className="font-bold">{post.title}</p>
-                <p className="text-xs">25 June 2023</p>
-              </div>
-            </motion.div>
+              <Link  key={post.id} href={`/singleblog/${post.id}`}>
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="recent-card flex items-center gap-3 w-full cursor-pointer px-5 shadow-[0_3px_10px_rgb(0,0,0,0.2)] rounded-md"
+                >
+                  <img src={post.image} alt="recent" width={80} height={80} className="rounded-md" />
+                  <div className="recent-card-text flex flex-col gap-1">
+                    <p className="font-bold">{post.title}</p>
+                    <p className="text-xs">25 June 2023</p>
+                  </div>
+                </motion.div>
+            </Link >
             ))}
             
           </div>

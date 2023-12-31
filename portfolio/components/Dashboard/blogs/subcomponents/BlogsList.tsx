@@ -7,6 +7,7 @@ import EditSinglePost from "./EditSinglePost";
 import { Link as ScrollLink, animateScroll as scroll } from 'react-scroll';
 
 
+
 export interface Post {
   id: number;
   title: string;
@@ -86,6 +87,8 @@ export interface Post {
     }
   };
 
+
+
   return (
         <div id="fuck-2">
           {data?.length === 0 ? (
@@ -103,7 +106,9 @@ export interface Post {
                               <ScrollLink to="fuck-1" smooth={true} duration={800}>
                                 <button onClick={()=> handleOnclick('view', post)} className='bg-blue-900 text-white px-1 py-1 rounded-sm'><HiOutlineViewfinderCircle /></button>
                               </ScrollLink>
-                              <button onClick={()=> handleOnclick('edit', post)} className='bg-green-900 text-white px-1 py-1 rounded-sm'><MdEditRoad /></button>
+                              <ScrollLink to="fuck-1" smooth={true} duration={800}>
+                                <button onClick={()=> handleOnclick('edit', post)} className='bg-green-900 text-white px-1 py-1 rounded-sm'><MdEditRoad /></button>
+                              </ScrollLink>
                               <button onClick={(e) =>deletePost(e,post.id)} className='bg-red-900 text-white px-1 py-1 rounded-sm'><AiOutlineDeleteRow /></button>
                             </div>
                           </div>

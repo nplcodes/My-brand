@@ -61,11 +61,11 @@ const NavBar = () => {
               <ScrollLink to="about" smooth={true} duration={800} >
                 <span className="text-black px-96 py-5 flex justify-center rounded-md hover:bg-white hover:text-black cursor-pointer" onClick={toggleMenu}>About</span>
               </ScrollLink>
-              <ScrollLink to="blog" smooth={true} duration={800} >
-                <span className="text-black px-96 py-5 flex justify-center rounded-md hover:bg-white hover:text-black cursor-pointer" onClick={toggleMenu}>Blogs</span>
-              </ScrollLink>
               <ScrollLink to="work" smooth={true} duration={800}>
                 <span className="text-black px-96 py-5 flex justify-center rounded-md hover:bg-white hover:text-black cursor-pointer" onClick={toggleMenu}>Portfolio</span>
+              </ScrollLink>
+              <ScrollLink to="blog" smooth={true} duration={800} >
+                <span className="text-black px-96 py-5 flex justify-center rounded-md hover:bg-white hover:text-black cursor-pointer" onClick={toggleMenu}>Blogs</span>
               </ScrollLink>
               <ScrollLink to="contact" smooth={true} duration={800}>
                 <span className="text-black px-96 py-5 flex justify-center rounded-md hover:bg-white hover:text-black cursor-pointer" onClick={toggleMenu}>Contact</span>

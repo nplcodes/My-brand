@@ -1,6 +1,14 @@
 import { db } from "@/lib/db";
 import { NextResponse } from "next/server";
 
+interface Work {
+    title: string;
+    description: string;
+    category: string;
+    colaborated: string;
+    image: File | string | null;
+  }
+
 // Update a post
 export const PUT =async (req: Request, res:Response) => {
     const params = req.url.split('/works/')[1]
@@ -8,7 +16,7 @@ export const PUT =async (req: Request, res:Response) => {
 
     const body = await req.json()
     const {
-        percentage,
+        colaborated,
         description,
         category,
         image
@@ -26,7 +34,7 @@ export const PUT =async (req: Request, res:Response) => {
                     id
                 },
                 data:{
-                    percentage,
+                    colaborated,
                     description,
                     category,
                     image

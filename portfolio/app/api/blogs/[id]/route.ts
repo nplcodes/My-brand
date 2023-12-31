@@ -136,10 +136,7 @@ export const GET =async (req: Request, res: Response) => {
     })
     if (singlepost) {
         try {
-            return NextResponse.json({
-                Message: "Single post: ",
-                data: singlepost
-            })
+            return NextResponse.json(singlepost)
         } catch (error) {
             console.error(error)
         }

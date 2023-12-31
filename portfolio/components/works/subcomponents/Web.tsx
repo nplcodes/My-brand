@@ -33,8 +33,8 @@ const Web = () => {
     fetchData();
   }, []);
   return (
-    // grid grid-cols-4 gap-2 min-h-[500px] p-5 px-10
-    <div className="works grid grid-cols-1 gap-4 min-h-[1000px] p-5 px-10 lg:grid-cols-2 lg:gap-2 lg:px-16 xl:grid-cols-4 xl:min-h-[500px]">
+    <div>
+          <div className="works grid grid-cols-1 gap-4 min-h-[1000px] p-5 px-10 lg:grid-cols-2 lg:gap-2 lg:px-16 xl:grid-cols-4 xl:min-h-[500px]">
       {/* grid grid-rows-2 gap-1 */}
         <div className="right-small xl:grid xl:grid-cols-1 xl:gap-1">
             <motion.div
@@ -63,6 +63,8 @@ const Web = () => {
           </motion.div>
         </div>
   </div>
+    </div>
+
   )
 }
 

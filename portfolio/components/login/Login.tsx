@@ -6,10 +6,13 @@ import Image from "next/image"
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 
 const Login = () => {
+  const [loading, setLoding]= useState<boolean>(false)
   const router = useRouter()
 const [email, setEmail] = useState<string>()
 const [password, setPassword] = useState<string>()
@@ -27,6 +30,7 @@ const handlePasswordOnchange = (e:React.ChangeEvent<HTMLInputElement>) =>{
 
 const formSubmit= async(e: React.FormEvent<HTMLFormElement>) =>{
   e.preventDefault()
+  setLoding(true)
   const signinData = await signIn('credentials', {
     email: email,
     password: password,
@@ -34,8 +38,13 @@ const formSubmit= async(e: React.FormEvent<HTMLFormElement>) =>{
   });
 
   if(signinData?.error){
-    console.log(signinData.error)
+    setTimeout(() => {
+      setLoding(true)
+    }, 5000);
+    setLoding(false)
+    toast("Invalid credentials (:)")
   }else{
+    setLoding(false)
     router.refresh()
     router.push('/admin')
   }
@@ -53,9 +62,7 @@ const formSubmit= async(e: React.FormEvent<HTMLFormElement>) =>{
             {/* font-bold */}
         <h1 className='font-bold'>Login</h1>
         </div>
-        {/* xl:grid xl:grid-cols-2 xl:px-32  */}
         <div className="min-h-[500px] py-5 xl:grid xl:grid-cols-2 xl:px-32 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)]">
-          {/* centered items-center justify-center */}
           <div className="centered items-center justify-center  hidden xl:flex">
              <Image src="/images/login-svg.svg" alt="login" width={400} height={800}/>
           </div>
@@ -73,12 +80,27 @@ const formSubmit= async(e: React.FormEvent<HTMLFormElement>) =>{
                   <input type="checkbox" className="checkbox bg-blue-500 text-white" />
                   <p>Remember me</p>
                 </div>
-                  <button type="submit" className="btn w-full bg-blue-500 text-white">Login</button>
+                {loading ? (
+                  <div>
+                    <button type="submit" className="btn w-full bg-blue-500 text-white">
+                      <span className="loading loading-spinner loading-xs"></span>
+                    </button>
+                  </div>
+                ): (
+                  <div>
+                    <button type="submit" className="btn w-full bg-blue-500 text-white">Login</button>
+                  </div>
+                )
+                }
                <Link href='/'> <p>Back Home</p></Link>
           </form>
         </div>
+        <ToastContainer />
     </div>
   )
 }
 
 export default Login
+
+
+

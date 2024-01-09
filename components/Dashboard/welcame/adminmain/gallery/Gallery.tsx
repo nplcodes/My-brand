@@ -1,7 +1,6 @@
 "use client"
 
 import { useState } from "react";
-import Topbar from "../../admintopbar/Topbar";
 import Photos from "./subcomponents/Photos";
 import NewGallery from "../Forms/NewGallery";
 import { MdOutlineFilterList } from "react-icons/md";

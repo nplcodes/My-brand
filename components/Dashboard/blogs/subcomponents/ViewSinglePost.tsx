@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Post } from "./BlogsList";
 import { Link as ScrollLink, animateScroll as scroll } from 'react-scroll';
 
@@ -14,7 +15,7 @@ const ViewSinglePost: React.FC<EditSinglePostProps> = ({ post }) => {
           <div>
             {/* Image part */}
             <div>
-              <img src={post.image} width={500} height={500}/> 
+              <Image alt="lt" src={post.image} width={500} height={500}/>
             </div>
           </div>
           {/* Text part */}

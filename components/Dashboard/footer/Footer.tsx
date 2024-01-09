@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link'
 import React from 'react'
 import { Link as ScrollLink, animateScroll as scroll } from 'react-scroll';
@@ -8,7 +9,7 @@ const DownFooter = () => {
         <footer className="footer p-10 bg-gray-200">
         <aside>
         <ScrollLink to="home" smooth={true} duration={800}>
-          <img alt="logo" width={100} height={100} src="/images/LOGO.png" />
+          <Image alt="logo" width={100} height={100} src="/images/LOGO.png" />
         </ScrollLink>
           <p>nplcodes Ltd. @2023</p>
         </aside>

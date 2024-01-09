@@ -1,4 +1,5 @@
 // BlogHeroSection.tsx
+import Image from 'next/image';
 import React from 'react';
 
 interface BlogHeroSectionProps {
@@ -15,7 +16,7 @@ const BlogHeroSection: React.FC<BlogHeroSectionProps> = ({ blog }) => {
       {blog && (
         <div className="flex flex-col">
           {/* Blog Image */}
-          <img src={blog.image} alt={blog.title} className="w-full h-96 object-cover rounded-md mb-4" />
+          <Image src={blog.image} alt={blog.title} className="w-full h-96 object-cover rounded-md mb-4" />
 
           {/* Description Text */}
           <h1 className="text-2xl text-blue-500 pb-6">{blog.title}</h1>

@@ -63,7 +63,7 @@ const Photos = () => {
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
           >
-            <img alt="gallery" src={post.image} width={600} height={600} className="rounded-md" />
+            <Image alt="gallery" src={post.image} width={600} height={600} className="rounded-md" />
             {isHovered && (
               <button
                 className="text-white bg-red-500 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 absolute"

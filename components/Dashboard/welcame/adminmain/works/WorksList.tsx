@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { useEffect, useState } from "react";
 
 interface Work {
@@ -57,7 +58,7 @@ const WorksList = () => {
         <div className="card card-compact bg-base-100 shadow-xl xl:grid xl:grid-cols-3">
           {data.map((post, index) => (
             <div key={index} className="card-body cursor-pointer">
-              <img src={post.image} alt="Shoes" className="h-48 w-full" />
+              <Image src={post.image} alt="Shoes" className="h-48 w-full" />
               <h2 className="card-title">{post.title}</h2>
               <p>{post.description}</p>
             </div>

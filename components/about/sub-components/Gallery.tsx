@@ -1,6 +1,7 @@
 "use client"
 
 
+import Image from "next/image";
 import { useEffect, useState } from "react";
 
 
@@ -36,7 +37,7 @@ const Gallery = () => {
                     <div 
                     key={post.id}
                     className="single-image cursor-pointer">
-                    <img alt="gallery"  src={post.image} width={600} height={600} className="rounded-md"/>
+                    <Image alt="gallery"  src={post.image} width={600} height={600} className="rounded-md"/>
                     </div>
                 ))}
           </div>

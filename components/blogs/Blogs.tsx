@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { CiHeart } from 'react-icons/ci';
 import { GoCommentDiscussion } from 'react-icons/go';
 import Link from "next/link";
+import Image from "next/image";
 
 
 
@@ -52,7 +53,7 @@ const Blogs = () => {
           <div
             className="relative overflow-hidden rounded-md"
           >
-            <img
+            <Image
               src={data[0]?.image}
               alt="Main Blog Post"
               className="w-full h-96 object-cover rounded-md"
@@ -85,7 +86,7 @@ const Blogs = () => {
                 <div
                   className="recent-card flex items-center gap-3 w-full cursor-pointer px-5 shadow-[0_3px_10px_rgb(0,0,0,0.2)] rounded-md"
                 >
-                  <img src={post.image} alt="recent" width={80} height={80} className="rounded-md" />
+                  <Image src={post.image} alt="recent" width={80} height={80} className="rounded-md" />
                   <div className="recent-card-text flex flex-col gap-1">
                     <p className="font-bold">{post.title}</p>
                     <p className="text-xs">25 June 2023</p>

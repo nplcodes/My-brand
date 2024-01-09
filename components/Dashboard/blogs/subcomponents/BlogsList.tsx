@@ -5,6 +5,7 @@ import { AiOutlineDeleteRow } from "react-icons/ai";
 import ViewSinglePost from "./ViewSinglePost";
 import EditSinglePost from "./EditSinglePost";
 import { Link as ScrollLink, animateScroll as scroll } from 'react-scroll';
+import Image from "next/image";
 
 
 
@@ -98,7 +99,7 @@ export interface Post {
                     <div className="card card-compact bg-base-100 shadow-xl xl:grid xl:grid-cols-3">
                       {data?.map(post => (
                         <div key={post.id} className="card-body w-72 h-full">
-                          <figure><img src={post.image} alt={post.title} /></figure>
+                          <figure><Image src={post.image} alt={post.title} /></figure>
                           <h2 className="card-title">{post.title}</h2>
                           <p>{post.description}</p>
                           <div className="lk-comm flex flex-row gap-2 items-center justify-between">

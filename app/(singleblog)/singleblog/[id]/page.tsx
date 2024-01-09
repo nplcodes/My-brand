@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { useParams } from 'next/navigation';
 import { format } from "timeago.js";
 import BlogHeroSection from "@/components/blogs/SinglePostChangable";
+import Image from "next/image";
 
 
 interface Blog {
@@ -94,7 +95,7 @@ const SingleBlog = () => {
                 onClick={() => handleArticleClick(post)}
               >
                 <div className="w-1/3">
-                  <img src={post.image} alt="Article" className="w-full h-16 object-cover rounded-md" />
+                  <Image src={post.image} alt="Article"  className="w-full h-16 object-cover rounded-md" />
                 </div>
                 <div className="w-1/3">
                   <div className="text-sm w-full text-gray-700">{post.title}</div>

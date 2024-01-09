@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { useEffect, useState } from "react";
 
 interface Work {
@@ -53,28 +52,22 @@ const WorksList = () => {
 
   return (
     <div>
-      <div className="all-blogs space-y-3">
+    <div className="all-blogs space-y-3">
+      {data && data.length > 0 ? (
         <div className="card card-compact bg-base-100 shadow-xl xl:grid xl:grid-cols-3">
-          {data?.map((post, index) => (
+          {data.map((post, index) => (
             <div key={index} className="card-body cursor-pointer">
               <img src={post.image} alt="Shoes" className="h-48 w-full" />
               <h2 className="card-title">{post.title}</h2>
               <p>{post.description}</p>
-              <div className="lk-comm flex flex-row gap-2 items-center justify-between">
-                <div className="comments">
-                  <button
-                    className="bg-red-900 text-white px-6 py-1 rounded-sm"
-                    onClick={() => handleDelete(index)}
-                  >
-                    delete
-                  </button>
-                </div>
-              </div>
             </div>
           ))}
         </div>
-      </div>
+      ) : (
+        <p>No work available.</p>
+      )}
     </div>
+  </div>
   );
 };
 

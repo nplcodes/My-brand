@@ -21,7 +21,7 @@ const Personal = () => {
           {/* flex flex-row justify-between items-center gap-3 py-2 px-5  */}
           <div className="image-names flex justify-between xl:flex-row xl:items-center xl:gap-3 xl:py-2 xl:px-5 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] ">
             <div className="flex items-center gap-3" >
-              <Image alt="avatar" src="/images/hero-pic.png" height={50} width={50} className="rounded-full"/>
+              <Image alt="avatar" src="/images/mee_1.png" height={50} width={50} className="rounded-full"/>
               <div className="flex flex-col gap-1">
                 <p className="text-md font-bold">NP Leon</p>
                 <p className="text-xs text-blue-500">Web Developer</p>

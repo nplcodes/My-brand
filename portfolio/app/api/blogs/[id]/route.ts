@@ -132,7 +132,16 @@ export const GET =async (req: Request, res: Response) => {
     const singlepost = await db.post.findFirst({
         where: {
             id
-        }
+        },
+        select: {
+            id: true,
+            title:true,
+            description: true,
+            category:true,
+            priority:true,
+            image:true,
+            createdAt: true, // Make sure to include createdAt in the select fields
+          },
     })
     if (singlepost) {
         try {

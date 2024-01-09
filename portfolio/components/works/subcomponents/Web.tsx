@@ -1,8 +1,5 @@
-"use client"
-
-import { motion } from 'framer-motion';
-import { useEffect, useState } from 'react';
-
+import Link from "next/link";
+import { useEffect, useState } from "react";
 
 interface Work {
   title: string;
@@ -32,40 +29,33 @@ const Web = () => {
 
     fetchData();
   }, []);
+
   return (
     <div>
-          <div className="works grid grid-cols-1 gap-4 min-h-[1000px] p-5 px-10 lg:grid-cols-2 lg:gap-2 lg:px-16 xl:grid-cols-4 xl:min-h-[500px]">
-      {/* grid grid-rows-2 gap-1 */}
-        <div className="right-small xl:grid xl:grid-cols-1 xl:gap-1">
-            <motion.div
-              whileHover={{scale:1.05}}
-              transition={{duration:0.5}} 
-              className="bg-cover bg-no-repeat bg-center rounded-md cursor-pointer" style={{backgroundImage: `url(${data[0]?.image})`,}}>
-            </motion.div>
-            <motion.div
-              whileHover={{scale:1.05}}
-              transition={{duration:0.5}} 
-              className="bg-cover bg-no-repeat bg-center rounded-md cursor-pointer" style={{backgroundImage: `url(${data[1]?.image})`,}}>
-            </motion.div>
+      <div className="all-blogs space-y-3">
+        <div className="card card-compact bg-base-100 shadow-xl xl:grid xl:grid-cols-3">
+          {data?.map((post, index) => (
+            <div key={index} className="card-body cursor-pointer">
+              <img src={post.image} alt="Shoes" className="h-48 w-full" />
+              <h2 className="card-title">{post.title}</h2>
+              <p>{post.description}</p>
+              <div className="lk-comm flex flex-row gap-2 items-center justify-between">
+                <div className="comments">
+                  <button
+                    className="bg-gray-900 text-white px-6 py-1 rounded-sm"
+                  >
+                    <Link href='https://github.com/nplcodes'>
+                      Visit
+                    </Link>
+                  </button>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
-        {/* col-span-2 */}
-        <motion.div whileHover={{scale:1.01}} transition={{duration:0.6}}  className="middle-large bg-cover bg-no-repeat bg-center rounded-md xl:col-span-2 cursor-pointer" style={{backgroundImage: 'url(/images/w1.jpg)',}}></motion.div>
-          <div className="left-small xl:grid xl:grid-rows-3 xl:gap-1">
-          <motion.div 
-            whileHover={{scale:1.05}}
-            transition={{duration:0.5}} 
-          className="bg-cover bg-no-repeat bg-center cursor-pointer rounded-md" style={{backgroundImage: `url(${data[2]?.image})`,}}>
-          </motion.div>
-          <motion.div
-            whileHover={{scale:1.05}}
-            transition={{duration:0.5}} 
-          className="bg-cover bg-no-repeat bg-center cursor-pointer" style={{backgroundImage: `url(${data[3]?.image})`,}}>
-          </motion.div>
-        </div>
-  </div>
+      </div>
     </div>
+  );
+};
 
-  )
-}
-
-export default Web
+export default Web;

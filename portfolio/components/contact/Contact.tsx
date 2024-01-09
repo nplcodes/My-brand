@@ -37,11 +37,10 @@ const Contact = () => {
     const handleSubmit = async(e: React.FormEvent<HTMLFormElement>)=>{
         e.preventDefault()
 
-        if(!message.email || !message.fname || !message.surname || !message.telephone || !message.content_message){
-            toast("Fill all fields :)")
-        }
-
         try {
+            if(!message.email || !message.fname || !message.surname || !message.telephone || !message.content_message){
+                 return toast("Fill all fields :)")
+            }
             const response = await axios.post('/api/messeges', message);
             if (response.status === 200) {
                 setMessage(initialMessageValues);
@@ -57,9 +56,9 @@ const Contact = () => {
     <div id="contact" className="pt-24 ">
         <div className="about-header bg-slate-300 flex gap-3 flex-col items-center justify-center py-10 bg-transparent">
             <div className='flex items-center justify-center gap-2'>
-                <div className='w-4 h-4 bg-blue-400'></div>
-                  <p className='text-blue-400'>Talk to me</p>
-                <div className='w-4 h-4 bg-blue-400'></div>
+                <div className='w-4 h-4 bg-gray-400'></div>
+                  <p className='text-gray-400'>Talk to me</p>
+                <div className='w-4 h-4 bg-gray-400'></div>
             </div>
             <h1 className='font-bold'>Contact Me</h1>
         </div>
@@ -84,18 +83,18 @@ const Contact = () => {
                 <form className="form" onSubmit={handleSubmit}>
                     {/* grid grid-cols-2 gap-6 py-3 */}
                     <div className="input-fields flex flex-col gap-2 lg:grid lg:grid-cols-2 lg:gap-6 lg:py-3 xl:grid xl:grid-cols-2 xl:gap-6 xl:py-3 ">
-                        <input name="surname" type="text" value={message.surname} onChange={handleChange} placeholder="Surname ...." className="py-2 px-2 rounded-md focus:outline-none border-b"/>
-                        <input name="fname" type="text" value={message.fname} onChange={handleChange} placeholder="Name ...." className="py-2 px-2 rounded-md focus:outline-none border-b"/>
+                        <input name="surname" required type="text" value={message.surname} onChange={handleChange} placeholder="Surname ...." className="py-2 px-2 rounded-md focus:outline-none border-b"/>
+                        <input name="fname" required type="text" value={message.fname} onChange={handleChange} placeholder="Name ...." className="py-2 px-2 rounded-md focus:outline-none border-b"/>
                     </div>
                     {/*  grid grid-cols-2 gap-6 */}
                     <div className="input-fields py-3 pb-5 flex flex-col gap-2 lg:grid lg:grid-cols-2 lg:gap-6 lg:py-3 xl:grid xl:grid-cols-2 xl:gap-6 xl:py-3">
-                        <input name="email" type="email" value={message.email} onChange={handleChange} placeholder="Email address" className="py-2 px-2 rounded-md focus:outline-none border-b"/>
-                        <input name="telephone" type="text" value={message.telephone} onChange={handleChange} placeholder="Telephone number" className="py-2 px-2 rounded-md focus:outline-none border-b"/>
+                        <input name="email" required type="email" value={message.email} onChange={handleChange} placeholder="Email address" className="py-2 px-2 rounded-md focus:outline-none border-b"/>
+                        <input name="telephone" required type="text" value={message.telephone} onChange={handleChange} placeholder="Telephone number" className="py-2 px-2 rounded-md focus:outline-none border-b"/>
                     </div>
                     {/* text area */}
                     <div className="text-area py-3 flex flex-col gap-3 ">
-                        <textarea name="content_message" value={message.content_message} onChange={handleChange} placeholder="Your message ...." rows={5} className="rounded-md focus:outline-none border px-2 py-2"/>
-                        <button type="submit" className="py-2 px-2 rounded-md focus:outline-none border bg-blue-300 text-white hover:bg-blue-500">Send</button>
+                        <textarea name="content_message" required value={message.content_message} onChange={handleChange} placeholder="Your message ...." rows={5} className="rounded-md focus:outline-none border px-2 py-2"/>
+                        <button type="submit" className="py-2 px-2 rounded-md focus:outline-none border bg-gray-400 text-white hover:bg-black">Send</button>
                     </div>
                 </form>
                 <ToastContainer />

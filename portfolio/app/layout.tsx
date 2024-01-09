@@ -1,4 +1,3 @@
-// app/layout.tsx
 "use client"
 // app/layout.tsx
 import { Inter } from 'next/font/google';
@@ -17,7 +16,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   const pathname = usePathname();
   const isLoginPage = pathname === '/login';
   const isAdminPage = pathname === '/admin';
-  const isUserPage = pathname === '/user';
+  const isBlogPage = pathname.includes('/singleblog');
 
   return (
     <html lang="en">
@@ -35,11 +34,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
              <Admin />
           </AdminLayout>
         )}
-        {!isLoginPage && !isAdminPage && (
+        {!isLoginPage && !isAdminPage && !isBlogPage && (
           <div className="container max-w-7xl mx-auto">
             <NavBar />
             {children}
             <Footer />
+          </div>
+        )}
+        {isBlogPage && (
+          <div className="container max-w-8xl mx-auto px-16 py-8">
+            {children}
           </div>
         )}
       </body>

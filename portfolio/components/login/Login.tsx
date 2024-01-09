@@ -1,6 +1,5 @@
 'use client'
 
-import { error } from "console";
 import { signIn } from "next-auth/react";
 import Image from "next/image"
 import Link from "next/link";
@@ -55,9 +54,9 @@ const formSubmit= async(e: React.FormEvent<HTMLFormElement>) =>{
     <div className="login min-h-[550px] px-5 xl:px-16">
         <div className="about-header bg-slate-300 flex gap-3 flex-col items-center justify-center py-10 bg-transparent">
             <div className='flex items-center justify-center gap-2'>
-                <div className='w-4 h-4 bg-blue-400'></div>
-                  <p className='text-blue-400'>My Account</p>
-                <div className='w-4 h-4 bg-blue-400'></div>
+                <div className='w-4 h-4 bg-gray-400'></div>
+                  <p className='text-gray-400'>My Account</p>
+                <div className='w-4 h-4 bg-gray-400'></div>
             </div>
             {/* font-bold */}
         <h1 className='font-bold'>Login</h1>
@@ -88,7 +87,7 @@ const formSubmit= async(e: React.FormEvent<HTMLFormElement>) =>{
                   </div>
                 ): (
                   <div>
-                    <button type="submit" className="btn w-full bg-blue-500 text-white">Login</button>
+                    <button type="submit" className="btn w-full bg-gray-500 hover:bg-black text-white">Login</button>
                   </div>
                 )
                 }

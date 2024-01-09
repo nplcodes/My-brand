@@ -1,7 +1,5 @@
 "use client"
 
-import Image from "next/image"
-import { motion } from 'framer-motion';
 import { FaUsers } from "react-icons/fa6";
 import { LiaBlogSolid } from "react-icons/lia";
 import { MdWorkspacesOutline } from "react-icons/md";

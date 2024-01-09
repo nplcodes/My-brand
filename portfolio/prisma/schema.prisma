@@ -51,8 +51,8 @@ model Contact {
   id        Int      @id @default(autoincrement())
   fname      String
   surname   String
-  email     String   @unique
-  telephone String   @unique
+  email     String  
+  telephone String   
   content_message   String
   createdAt DateTime @default(now())
 }

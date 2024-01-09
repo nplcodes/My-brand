@@ -95,7 +95,7 @@ const SingleBlog = () => {
                 onClick={() => handleArticleClick(post)}
               >
                 <div className="w-1/3">
-                  <Image src={post.image} alt="Article"  className="w-full h-16 object-cover rounded-md" />
+                  <img src={post.image} alt="Article"  className="w-full h-16 object-cover rounded-md" />
                 </div>
                 <div className="w-1/3">
                   <div className="text-sm w-full text-gray-700">{post.title}</div>

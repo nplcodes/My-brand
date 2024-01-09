@@ -22,10 +22,10 @@ const NavBar = () => {
   return (
     <div 
     className="bg-gray-200 z-50 sticky top-0 right-0 left-0 md:py-3 md:px-3 xl:fixed xl:px-5">
-      <div className="max-w-4xl mx-auto flex justify-between items-center">
+      <div className="max-w-4xl max-h-10  mx-auto flex justify-between items-center">
         <div className="logo text-4xl font-bold cursor-pointer">
         <ScrollLink to="home" smooth={true} duration={800}>
-          <Image alt="" width={100} height={100} src="/images/LOGO.png" />
+          <img alt="" width={100} height={100} src="/images/LOGO.png" />
         </ScrollLink>
         </div>
         <nav className="navbar-menu flex gap-10">

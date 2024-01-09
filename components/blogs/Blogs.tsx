@@ -53,7 +53,7 @@ const Blogs = () => {
           <div
             className="relative overflow-hidden rounded-md"
           >
-            <Image
+            <img
               src={data[0]?.image}
               alt="Main Blog Post"
               className="w-full h-96 object-cover rounded-md"

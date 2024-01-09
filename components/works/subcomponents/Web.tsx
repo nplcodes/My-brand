@@ -37,7 +37,7 @@ const Web = () => {
         <div className="card card-compact bg-base-100 shadow-xl xl:grid xl:grid-cols-3">
           {data?.map((post, index) => (
             <div key={index} className="card-body cursor-pointer">
-              <Image src={post.image} alt="Shoes" className="h-48 w-full" />
+              <img src={post.image} width={48} height={100} alt="Shoes" className="h-48 w-full" />
               <h2 className="card-title">{post.title}</h2>
               <p>{post.description}</p>
               <div className="lk-comm flex flex-row gap-2 items-center justify-between">

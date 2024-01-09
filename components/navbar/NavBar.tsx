@@ -25,7 +25,7 @@ const NavBar = () => {
       <div className="max-w-4xl mx-auto flex justify-between items-center">
         <div className="logo text-4xl font-bold cursor-pointer">
         <ScrollLink to="home" smooth={true} duration={800}>
-          <Image alt="logo" width={100} height={100} src="/images/LOGO.png" />
+          <Image alt="" width={100} height={100} src="/images/LOGO.png" />
         </ScrollLink>
         </div>
         <nav className="navbar-menu flex gap-10">

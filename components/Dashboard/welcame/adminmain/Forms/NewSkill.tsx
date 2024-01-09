@@ -9,7 +9,7 @@ interface SkillInfo {
     title: string;
     percentage: string;
     description: string,
-    image: File | string | null;
+    image: string;
   }
   
   const CLOUD_NAME = 'dlrivoh1v';
@@ -22,7 +22,7 @@ const NewSkill = () => {
       title: '',
       description: '',
       percentage: '',
-      image:  null,
+      image:  '',
     };
 
     const [postInfo, setPostInfo] = useState<SkillInfo>(initialSkillInfo);

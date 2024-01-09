@@ -4,7 +4,7 @@ import { AiOutlineFileImage } from "react-icons/ai";
 
 interface PhotoInfo {
   description: string;
-  image: File | string | null;
+  image:string ;
 }
 
 const CLOUD_NAME = 'dlrivoh1v';
@@ -12,10 +12,10 @@ const UPLOAD_PRESET = 'my-brand-images-store';
 
 
 const NewGallery = () => {
-  const [photo, setPhoto] = useState<File | null | ''>(null);
+  const [photo, setPhoto] = useState<File | null | ''>();
   const initialPhotoInfo: PhotoInfo = {
     description: '',
-    image:  null,
+    image:  '',
   };
   const [postInfo, setPostInfo] = useState<PhotoInfo>(initialPhotoInfo);
 

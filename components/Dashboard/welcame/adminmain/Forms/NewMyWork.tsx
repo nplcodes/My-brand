@@ -10,7 +10,7 @@ interface WorkInfo {
     description: string;
     category: string;
     colaborated: string;
-    image: File | string | null;
+    image: string;
   }
 
 const CLOUD_NAME = 'dlrivoh1v';
@@ -18,13 +18,13 @@ const UPLOAD_PRESET = 'my-brand-images-store';
 
 const NewWork = () => {
     const notify = () => toast(' New Post i successfully created!');
-    const [photo, setPhoto] = useState<File | null | ''>(null);
+    const [photo, setPhoto] = useState<File | null | ''>('');
     const initialWorkInfo: WorkInfo = {
       title: '',
       description: '',
       category: '',
       colaborated: '',
-      image:  null,
+      image:  '',
     };
 
     const [WorkInfo, setWorkInfo] = useState<WorkInfo>(initialWorkInfo);

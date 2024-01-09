@@ -9,7 +9,7 @@ interface PostInfo {
   description: string;
   category: string;
   priority: string;
-  image: File | string | null;
+  image: string;
 }
 
 const CLOUD_NAME = 'dlrivoh1v';
@@ -17,13 +17,13 @@ const UPLOAD_PRESET = 'my-brand-images-store';
 
 const NewBlogs = () => {
   const notify = () => toast(' New Post i successfully created!');
-  const [photo, setPhoto] = useState<File | null | ''>(null);
+  const [photo, setPhoto] = useState<File | null | ''>('');
   const initialPostInfo: PostInfo = {
     title: '',
     description: '',
     category: '',
     priority: '',
-    image:  null,
+    image:  '',
   };
   const [postInfo, setPostInfo] = useState<PostInfo>(initialPostInfo);
 

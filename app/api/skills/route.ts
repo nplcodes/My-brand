@@ -6,7 +6,7 @@ interface SkillInfo {
     title: string;
     percentage: string;
     description: string,
-    image: File | string | null;
+    image: string 
   }
 // create a post
 export const POST =async (req: Request, res:Response) => {

@@ -1,16 +1,25 @@
 import { db } from "@/lib/db";
 import { NextResponse } from "next/server";
 
+
+
+interface SkillInfo {
+    title: string;
+    percentage: string;
+    description: string,
+    image: string;
+  }
+
 // Update a post
 export const PUT =async (req: Request, res:Response) => {
     const params = req.url.split('/skills/')[1]
     const id =parseInt(params)
 
-    const body = await req.json()
+    const body:SkillInfo = await req.json()
     const {
         title,
         description,
-        category,
+        percentage,
         image
     } = body
 
@@ -28,7 +37,7 @@ export const PUT =async (req: Request, res:Response) => {
                 data:{
                     title,
                     description,
-                    category,
+                    percentage,
                     image
                 }
             })

@@ -1,0 +1,64 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id            String    @id @default(cuid())
+  name          String?
+  username      String?   @unique
+  password      String?
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+  email         String?   @unique
+  emailVerified DateTime?
+  image         String?
+}
+
+model Post {
+  id          Int      @id @default(autoincrement())
+  title       String
+  description String
+  category    String
+  priority    String
+  image       String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Work {
+  id          Int     @id @default(autoincrement())
+  title       String
+  colaborated String?
+  image       String
+  category    String
+  description String
+}
+
+model Skill {
+  id          Int    @id @default(autoincrement())
+  percentage  String
+  title       String
+  image       String
+  description String
+}
+
+model Contact {
+  id        Int      @id @default(autoincrement())
+  fname      String
+  surname   String
+  email     String  
+  telephone String   
+  content_message   String
+  createdAt DateTime @default(now())
+}
+
+model Gallery {
+  id          Int     @id @default(autoincrement())
+  image       String
+  description String?
+}

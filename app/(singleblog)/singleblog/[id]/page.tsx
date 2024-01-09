@@ -58,7 +58,7 @@ const SingleBlog = () => {
         const posts: Blog[] = await response.json();
         setData(posts);
       } catch (error) {
-        console.error('Error fetching posts:', error);
+        console.error('Error fetching posts, try again:', error);
       }
     };
 

@@ -8,7 +8,7 @@ interface SkillInfo {
   title: string;
   percentage: string;
   description: string,
-  image:  string | undefined;
+  image:  string;
 }
 
 

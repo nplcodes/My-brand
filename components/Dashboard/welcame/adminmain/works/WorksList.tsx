@@ -5,7 +5,7 @@ interface Work {
   description: string;
   category: string;
   colaborated: string;
-  image: string | undefined;
+  image: string;
 }
 
 const WorksList = () => {

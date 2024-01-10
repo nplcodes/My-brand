@@ -5,7 +5,6 @@ import { RiMenu3Fill } from 'react-icons/ri';
 import { FaTimes } from "react-icons/fa";
 import Link from 'next/link';
 import { Link as ScrollLink, animateScroll as scroll } from 'react-scroll';
-import Image from 'next/image';
 
 
 const NavBar = () => {
